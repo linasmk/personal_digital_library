@@ -1,0 +1,21 @@
+/* ============ Globals ============ */
+header {
+  width: 100%;
+  background: linear-gradient(185deg, rgb(255, 191, 97), rgba(0, 0, 0, 1));
+  height: 45vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+.main-heading {
+  color: white;
+  text-align: center;
+}
+/* ============= Media Queries ============== */
+@media screen and (min-width: 767px) {
+  header {
+    height: 35vh;
+  }
+}
