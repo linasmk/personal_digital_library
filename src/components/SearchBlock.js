@@ -2,15 +2,14 @@ import React from "react";
 import SearchResult from "./SearchResult";
 
 export default class SearchBlock extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      search: ""
-    };
-  }
+  state = {
+    search: ""
+  };
+  // Adjusting state to search results
   updateSearch(e) {
     this.setState({ search: e.target.value });
   }
+
   render() {
     let filteredLibrary = this.props.library.filter(book => {
       return (
@@ -29,8 +28,8 @@ export default class SearchBlock extends React.Component {
             />
           </label>
         </div>
-        <div className="search-result">
-          {filteredLibrary.map(book => (
+        <div className="search__result">
+          {filteredLibrary.map((book, index) => (
             <SearchResult
               key={book.id.toString()}
               title={book.title}
@@ -38,6 +37,7 @@ export default class SearchBlock extends React.Component {
               rating={book.rating}
               description={book.description}
               publicationYear={book.publicationYear}
+              publisher={book.publisher}
               publicationLength={book.publicationLength}
               category={book.category}
               url={book.url}

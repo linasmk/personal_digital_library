@@ -1,0 +1,113 @@
+@mixin ulStyle {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+@mixin noHighlightAndSelect {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+@mixin verticalFlex($position, $alignment) {
+  display: flex;
+  flex-direction: column;
+  //flex-wrap: wrap;
+  justify-content: $position;
+  align-items: $alignment;
+}
+@mixin horizontalFlex($position, $alignment) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: $position;
+  align-items: $alignment;
+}
+
+@mixin backgroundIMG($path, $size, $position) {
+  background-image: $path;
+  background-size: $size;
+  background-position: $position;
+  background-repeat: no-repeat;
+}
+@mixin overlay($fallback, $bg) {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $fallback;
+  background: $bg;
+}
+@mixin containerWidth_sm {
+  width: 90%;
+  margin: 0 auto;
+}
+@mixin containerWidth_md {
+  width: 80%;
+  margin: 0 auto;
+}
+@mixin containerWidth_lg {
+  width: 70%;
+  margin: 0 auto;
+}
+@mixin containerWidth_xl {
+  width: 60%;
+  margin: 0 auto;
+}
+@mixin animatedButton($strongYellow, $mainBlue) {
+  background: linear-gradient($mainBlue, $strongYellow, $strongYellow);
+  position: relative;
+  z-index: 5;
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: -5;
+    background: $mainBlue;
+    background: linear-gradient($strongYellow, $mainBlue, $mainBlue);
+    transition: opacity 0.5s ease-out;
+  }
+  &:hover {
+    &:before {
+      opacity: 1;
+    }
+  }
+}
+@mixin animatedBorderBottom($borderColor) {
+  display: inline-block;
+  color: $borderColor;
+  text-decoration: none;
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 4px;
+    background: $borderColor;
+    transition: width 0.5s;
+  }
+  &:hover::after {
+    width: 100%;
+  }
+}
+@mixin clickInBtn($hoverColor, $width, $height) {
+  width: $width;
+  height: $height;
+  box-shadow: inset 0 0 0 rgba(0, 64, 143, 1), 2px 3px 8px rgba(0, 3, 44, 1);
+  border-radius: 5px;
+  border: none;
+  transition: box-shadow 0.2s ease-in-out, background 0.5s ease-in-out;
+  @include noHighlightAndSelect;
+  &:hover {
+    background: lighten($hoverColor, 5%);
+  }
+  &:focus-within {
+    outline: none;
+    border: none;
+    box-shadow: inset 0 1px 0 rgba(0, 64, 143, 1), 1px 1px 5px rgba(0, 3, 44, 1);
+  }
+}

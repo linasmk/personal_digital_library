@@ -6,7 +6,7 @@ const BookPicture = props => {
       <source media="(min-width: 998px)" srcSet={props.srcLg} sizes="200px" />
       <source media="(min-width: 480px)" srcSet={props.srcMd} sizes="120px" />
       <source media="(min-width: 300px)" srcSet={props.srcSm} sizes="80px" />
-      <img src={props.src} alt="title" />
+      <img className="book__picture" src={props.src} alt="title" />
     </picture>
   );
 };

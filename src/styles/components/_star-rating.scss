@@ -1,0 +1,18 @@
+/* ============= Star Rating ============== */
+.book__stars li {
+  width: 9%;
+}
+.star {
+  width: 100%;
+  fill: lighten($peach, 50%);
+}
+.selected .star {
+  fill: $peach;
+}
+
+/* ============= Media Queries ============== */
+@media screen and (min-width: 520px) {
+  .book__stars li {
+    width: 8%;
+  }
+}

@@ -1,6 +1,6 @@
 /* ============= Search Block ============== */
 .search-block {
-  background-color: #ffffff;
+  background-color: $white;
   width: 90%;
   margin: 0 auto;
   display: flex;
@@ -34,116 +34,5 @@
   padding: 10px;
   width: 200px;
 }
-.search-result {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.card {
-  width: 100%;
-  background-color: rgb(237, 237, 237);
-  color: #000;
-  margin: 15px 0;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  padding: 25px;
-  border: 5px solid transparent;
-  transition: border 0.5s ease;
-}
-.card:hover {
-  border: 5px solid rgb(255, 152, 0);
-}
-/* Book Title */
-.book-title {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.book-title h2 {
-  text-align: center;
-  margin: 10px 0;
-  flex-grow: 1;
-}
-.book-title h3 {
-  text-align: center;
-  margin: 10px 0;
-  font-weight: 900;
-}
-.book-title h3 span {
-  color: rgb(255, 152, 0);
-}
-.book-title .book-rating {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 10px 0;
-}
-.book-title .book-rating span {
-  margin: 0 5px;
-  color: rgb(255, 152, 0);
-}
 
-/* Book Descriptio */
-.book-description h3 {
-  margin: 15px 0;
-  text-align: center;
-}
-.book-link {
-  float: left;
-  margin-right: 15px;
-}
-.book-description p {
-  margin: 10px 0;
-}
-/* Other Infor */
-.book-other--info {
-  width: 100%;
-}
-.book-other--info h3 {
-  text-align: center;
-}
 /* ============= Media Queries ============== */
-@media screen and (min-width: 480px) {
-  .book-title h3 {
-    margin: 10px 0 10px 25px;
-  }
-  .book-title .book-rating {
-    margin: 10px 25px 10px 0;
-  }
-  .book-other--info p {
-    font-size: 20px;
-    margin: 25px 0 25px 0;
-  }
-}
-@media screen and (min-width: 767px) {
-  .book-other--info p {
-    font-size: 18px;
-    margin: 0 0 25px 0;
-  }
-}
-@media screen and (min-width: 998px) {
-  .search-result {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-  .card {
-    width: calc(50% - 50px);
-    margin: 15px 25px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .card {
-    width: calc(33% - 50px);
-  }
-  .book-description p {
-    font-size: 20px;
-  }
-}

@@ -1,23 +1,29 @@
-import React from "react";
+import React, { Component } from "react";
 import Header from "./Header";
 import library from "./Library";
 import SearchBlock from "./SearchBlock";
+import AddBook from "./AddBook";
 import Footer from "./Footer";
 
-export default class PersonalDigitalLibraryApp extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      library: library
-    };
-  }
+export default class PersonalDigitalLibraryApp extends Component {
+  state = {
+    library: library
+  };
+
   render() {
     return (
-      <main className="container">
+      <div className="container">
         <Header />
-        <SearchBlock library={this.state.library} />
+        <main className="main__content">
+          <SearchBlock
+            library={this.state.library}
+            renderStarRating={this.state.renderStarRating}
+            handleSetRating={this.state.handleSetRating}
+          />
+          <AddBook />
+        </main>
         <Footer />
-      </main>
+      </div>
     );
   }
 }

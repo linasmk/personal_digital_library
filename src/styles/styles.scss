@@ -1,4 +1,14 @@
+/* ============= Base ============== */
 @import "./base/global";
+@import "./base/settings";
+@import "./base/mixins";
+/* ============ Components ============== */
 @import "./components/header";
+@import "./components/main-content";
 @import "./components/search-block";
+@import "./components/add-book";
+@import "./components/search-result";
+@import "./components/modal-box";
+@import "./components/star-rating";
+@import "./components/star-rating-modal";
 @import "./components/footer";

@@ -1,46 +1,73 @@
 import React from "react";
 import BookPicture from "./BookPicture";
+import ModalBox from "./ModalBox";
+import StarRating from "./StarRating";
 
-const SearchResult = props => {
-  return (
-    <section className="card">
-      <div className="book-title">
-        <h2>{props.title}</h2>
-        <h3>
-          <span>by </span>
-          {props.author}
-        </h3>
-        <h3 className="book-rating">
-          Rating: <span> {props.rating}</span>
-        </h3>
-      </div>
+export default class SearchResult extends React.Component {
+  state = {
+    selectedOption: undefined,
+  };
+  handleModalPopUp = () => {
+    this.setState(() => ({
+      selectedOption: true,
+    }));
+  };
+  handleClearSelectedOption = () => {
+    this.setState(() => ({
+      selectedOption: undefined,
+    }));
+  };
+  render() {
+    return (
+      <div className="card__container">
+        <article className="card">
+          <section className="card__main_block">
+            <a
+              className="card__book_link"
+              href={this.props.url}
+              target="_blank"
+            >
+              <BookPicture
+                src={this.props.src}
+                srcSm={this.props.srcSm}
+                srcMd={this.props.srcMd}
+                srcLg={this.props.srcLg}
+                srcXlg={this.props.srcXlg}
+              />
+            </a>
 
-      <div className="book-description">
-        <h3>Description:</h3>
-        <a className="book-link" href={props.url} target="_blank">
-          <BookPicture
-            src={props.src}
-            srcSm={props.srcSm}
-            srcMd={props.srcMd}
-            srcLg={props.srcLg}
-            srcXlg={props.srcXlg}
-          />
-        </a>
-        <p>{props.description}</p>
+            <h2 className="card__book_title">{this.props.title}</h2>
+            <h3 className="card__book_author">
+              <span>by </span>
+              {this.props.author}
+            </h3>
+            <StarRating />
+          </section>
+          <button
+            className="view__more"
+            onClick={this.handleModalPopUp.bind(this)}
+          >
+            View More
+          </button>
+        </article>
+        <ModalBox
+          title={this.props.title}
+          author={this.props.author}
+          url={this.props.url}
+          src={this.props.src}
+          srcSm={this.props.srcSm}
+          srcMd={this.props.srcMd}
+          srcLg={this.props.srcLg}
+          srcXlg={this.props.srcXlg}
+          description={this.props.description}
+          publicationYear={this.props.publicationYear}
+          publisher={this.props.publisher}
+          publicationLength={this.props.publicationLength}
+          category={this.props.category}
+          handleClearSelectedOption={this.handleClearSelectedOption}
+          selectedOption={this.state.selectedOption}
+        />
       </div>
-      <div className="book-other--info">
-        <h3>Other Info</h3>
-        <p>
-          Publication Year: <strong>{props.publicationYear}</strong>
-        </p>
-        <p>
-          Publication Length: <strong>{props.publicationLength}</strong> pages
-        </p>
-        <p>
-          Category: <strong>{props.category}</strong>
-        </p>
-      </div>
-    </section>
-  );
-};
-export default SearchResult;
+    );
+  }
+}

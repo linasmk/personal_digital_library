@@ -1,0 +1,19 @@
+/* ============= Star Rating ============== */
+.book__stars-modal li {
+  width: 9%;
+}
+.star-modal {
+  padding: 0 2px;
+  width: 100%;
+  fill: lighten($peach, 50%);
+}
+.selected-modal .star-modal {
+  fill: $peach;
+}
+
+/* ============= Media Queries ============== */
+@media screen and (min-width: 600px) {
+  .book__stars-modal li {
+    width: 7%;
+  }
+}
