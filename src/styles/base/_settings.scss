@@ -9,17 +9,17 @@ $salad: #00cc33;
 $crimson: #dc143c;
 
 /* Box Sizes */
-$xs-box-size: 0.5rem;
-$s-box-size: 1rem;
-$m-box-size: 1.5rem;
-$l-box-size: 2.5rem;
-$xl-box-size: 4rem;
-$xxl-box-size: 5rem;
+$xs-box-size: pxToRem(5);
+$s-box-size: pxToRem(10);
+$m-box-size: pxToRem(15);
+$l-box-size: pxToRem(25);
+$xl-box-size: pxToRem(40);
+$xxl-box-size: pxToRem(50);
 
 /* Text Sizes */
-$xs-text-size: 1.4rem;
-$s-text-size: 1.6rem;
-$m-text-size: 2rem;
-$l-text-size: 2.8rem;
-$xl-text-size: 3.5rem;
-$xxl-text-size: 4.5rem;
+$xs-text-size: pxToRem(14);
+$s-text-size: pxToRem(16);
+$m-text-size: pxToRem(20);
+$l-text-size: pxToRem(28);
+$xl-text-size: pxToRem(35);
+$xxl-text-size: pxToRem(45);

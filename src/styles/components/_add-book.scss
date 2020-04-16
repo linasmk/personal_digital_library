@@ -1,4 +1,7 @@
-/* ========= Add Book ========== */
+/* ========= Add Book Button ========== */
+.addbook__wraper {
+  width: 100%;
+}
 .button__addbook {
   position: fixed;
   right: 2%;
@@ -15,7 +18,7 @@
   &:hover {
     transform: scale(1.19);
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8),
-      inset 0px 0px 10px rgba(0, 0, 0, 0.8);
+      inset 0px 0px 1px rgba(0, 0, 0, 0.8);
   }
   &:focus-within {
     outline: none;
@@ -26,7 +29,151 @@
 }
 .button__addbook_icon {
   fill: $lightGrey;
-  width: 20px;
-  font-size: 5rem;
+  width: pxToRem(20);
+  font-size: pxToRem(50);
   transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* ========= Add Book Form ========== */
+
+/* **** Input Styles **** */
+.addbook__form_row {
+  width: 100%;
+  @include verticalFlex(center, center);
+  margin: $s-box-size 0;
+}
+.addbook__form_column {
+  position: relative;
+  margin: $s-box-size 0;
+  width: 80%;
+  height: pxToRem(50);
+}
+.addbook__form_input {
+  width: 100%;
+  height: 100%;
+  padding-top: $l-box-size;
+  font-size: $s-text-size;
+  border: none;
+  &:focus-within {
+    outline: none;
+  }
+}
+.addbook__form_input:focus + .addbook__form_label .addbook__form_content,
+.addbook__form_input:valid + .addbook__form_label .addbook__form_content {
+  transform: translateY(-150%);
+  color: $peach;
+}
+.addbook__form_input:focus + .addbook__form_label::after,
+.addbook__form_input:valid + .addbook__form_label::after {
+  transform: translateX(0%);
+}
+.addbook__form_label {
+  position: absolute;
+  bottom: pxToRem(0);
+  left: pxToRem(0);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: pxToRem(-1);
+    left: pxToRem(0);
+    border-bottom: pxToRem(3) solid $peach;
+    transform: translateX(-100%);
+    transition: transform 0.8s ease-in-out;
+  }
+}
+.addbook__form_content {
+  position: absolute;
+  left: 0rem;
+  bottom: 0rem;
+  font-size: $s-text-size;
+  color: lighten($black, 50%);
+  transition: all 0.3s ease-in-out;
+}
+/* **** Textarea Styles **** */
+.addbook__form_column-textarea {
+  position: relative;
+  width: 80%;
+  height: pxToRem(150);
+  display: flex;
+  align-items: flex-end;
+}
+.addbook__form_textarea {
+  width: 100%;
+  height: pxToRem(150);
+  resize: none;
+  padding-top: pxToRem(25);
+  font-size: $s-text-size;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: none;
+  &:focus-within {
+    outline: none;
+  }
+}
+.addbook__form_textarea:focus
+  + .addbook__form_label-textarea
+  .addbook__form_content-textarea,
+.addbook__form_textarea:valid
+  + .addbook__form_label-textarea
+  .addbook__form_content-textarea {
+  transform: translateY(pxToRem(-50));
+  color: $peach;
+}
+.addbook__form_textarea:focus + .addbook__form_label-textarea::after,
+.addbook__form_textarea:valid + .addbook__form_label-textarea::after {
+  transform: translateX(0%);
+}
+.addbook__form_label-textarea {
+  position: absolute;
+  bottom: 0rem;
+  left: 0rem;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: pxToRem(-1);
+    left: 0rem;
+    border-bottom: pxToRem(2) solid $peach;
+    transform: translateX(-100%);
+    transition: transform 0.8s ease-in-out;
+  }
+}
+.addbook__form_content-textarea {
+  position: absolute;
+  color: lighten($black, 50%);
+  left: 0rem;
+  bottom: pxToRem(80);
+  font-size: $s-text-size;
+  transition: all 0.3s ease-in-out;
+}
+/* ============= Media Queries ============== */
+@media (min-width: pxToRem(600)) {
+  .addbook__form_row {
+    width: 90%;
+    margin: $l-box-size auto;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .addbook__form_column {
+    width: 40%;
+  }
+  .addbook__form_column-textarea {
+    width: 100%;
+  }
+}
+@media (min-width: pxToRem(1024)) {
+  .addbook__form_row {
+    width: 80%;
+    margin: $xl-box-size auto;
+  }
 }

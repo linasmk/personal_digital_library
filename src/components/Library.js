@@ -20,7 +20,7 @@ const library = [
     srcLg: "img/book_covers/gamify200x307.jpg",
     srcXlg: "img/book_covers/gamify250x386.jpg",
     background:
-      "linear-gradient(185deg, rgb(0, 255, 255), rgb(255, 255, 255), rgb(0, 255, 255));"
+      "linear-gradient(185deg, rgb(0, 255, 255), rgb(255, 255, 255), rgb(0, 255, 255));",
   },
   {
     id: 5000,
@@ -40,7 +40,7 @@ const library = [
     srcLg: "img/book_covers/mind_as_machine200x252.jpg",
     srcXlg: "img/book_covers/mind_as_machine250x315.jpg",
     background:
-      "linear-gradient(185deg, rgb(0, 255, 255), rgb(255, 255, 255), rgb(0, 255, 255));"
+      "linear-gradient(185deg, rgb(0, 255, 255), rgb(255, 255, 255), rgb(0, 255, 255));",
   },
   {
     id: 5001,
@@ -61,7 +61,7 @@ const library = [
     srcLg: "img/book_covers/bottlenecks200x302.jpg",
     srcXlg: "img/book_covers/bottlenecks250x379.jpg",
     background:
-      "linear-gradient(185deg, rgb(0, 255, 255), rgb(255, 255, 255), rgb(0, 255, 255));"
+      "linear-gradient(185deg, rgb(0, 255, 255), rgb(255, 255, 255), rgb(0, 255, 255));",
   },
   {
     id: 6000,
@@ -82,7 +82,7 @@ const library = [
     srcLg: "img/book_covers/js_the_good_parts200x260.jpg",
     srcXlg: "img/book_covers/js_the_good_parts250x325.jpg",
     background:
-      "linear-gradient(185deg, rgb(0, 255, 255), rgb(255, 255, 255), rgb(0, 255, 255));"
+      "linear-gradient(185deg, rgb(0, 255, 255), rgb(255, 255, 255), rgb(0, 255, 255));",
   },
   {
     id: 1000,
@@ -103,7 +103,7 @@ const library = [
     srcLg: "img/book_covers/the_power_of_habit200x303.jpg",
     srcXlg: "img/book_covers/the_power_of_habit250x379.jpg",
     background:
-      "linear-gradient(185deg, rgb(0, 255, 255), rgb(255, 255, 255), rgb(0, 255, 255));"
-  }
+      "linear-gradient(185deg, rgb(0, 255, 255), rgb(255, 255, 255), rgb(0, 255, 255));",
+  },
 ];
 export default library;

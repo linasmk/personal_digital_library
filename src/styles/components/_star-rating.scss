@@ -11,7 +11,7 @@
 }
 
 /* ============= Media Queries ============== */
-@media screen and (min-width: 520px) {
+@media screen and (min-width: pxToRem(520)) {
   .book__stars li {
     width: 8%;
   }

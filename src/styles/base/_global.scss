@@ -1,8 +1,12 @@
 /* ============ Globals ============ */
+@import "./settings";
+@import "./functions";
+
 html {
-  font-size: 62.5%;
+  font-size: 100%;
 }
 body {
+  font-size: 16px;
   margin: 0;
   padding: 0;
 }
@@ -10,58 +14,58 @@ body {
   box-sizing: border-box;
 }
 h1 {
-  font-size: 48px;
-  margin: 1.5rem 0;
+  font-size: pxToRem(48);
+  margin: $m-box-size 0;
 }
 h2 {
-  font-size: 18px;
-  margin: 1.2rem 0;
+  font-size: pxToRem(18);
+  margin: pxToRem(48) 0;
 }
 h3 {
-  font-size: 16px;
-  margin: 1rem 0;
+  font-size: pxToRem(16);
+  margin: $s-box-size 0;
 }
 h4 {
-  font-size: 14px;
-  margin: 0.8rem 0;
+  font-size: pxToRem(14);
+  margin: pxToRem(8) 0;
 }
 p {
-  font-size: 14px;
-  margin: 1rem 0;
+  font-size: $xs-text-size;
+  margin: $s-box-size 0;
 }
 
 /* ============= Media Queries ============== */
-@media screen and (min-width: 480px) {
+@media screen and (min-width: pxToRem(480)) {
   h1 {
-    margin: 1.8rem 0;
+    margin: pxToRem(28) 0;
   }
   h2 {
-    font-size: 22px;
-    margin: 1.5rem 0;
+    font-size: pxToRem(22);
+    margin: $m-box-size 0;
   }
   h3 {
-    font-size: 18px;
-    margin: 1.2rem 0;
+    font-size: pxToRem(18);
+    margin: pxToRem(12) 0;
   }
   p {
-    font-size: 16px;
-    margin: 1.2rem 0;
+    font-size: $xs-text-size;
+    margin: pxToRem(12) 0;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: pxToRem(1024)) {
   h1 {
-    margin: 2rem 0;
+    margin: pxToRem(20) 0;
   }
   h2 {
-    font-size: 28px;
-    margin: 1.8rem 0;
+    font-size: $l-text-size;
+    margin: pxToRem(18) 0;
   }
   h3 {
-    font-size: 24px;
-    margin: 1.5rem 0;
+    font-size: pxToRem(24);
+    margin: $m-box-size 0;
   }
   p {
-    font-size: 20px;
-    margin: 1.5rem 0;
+    font-size: $m-text-size;
+    margin: $m-box-size 0;
   }
 }

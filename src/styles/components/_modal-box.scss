@@ -45,7 +45,7 @@
 .modal__details_block {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  grid-template-rows: 0.5fr 0.8fr 0.4fr;
+  grid-template-rows: auto auto auto;
 }
 .details__block_description {
   grid-column: 1 / span 2;
@@ -65,13 +65,13 @@
   grid-column: 2;
   grid-row: 2;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .modal__table {
   width: 100%;
   text-align: left;
-  font-size: 1.2rem;
-  border-spacing: 5px;
+  font-size: pxToRem(12);
+  border-spacing: pxToRem(5);
 }
 .modal__table tbody {
   width: 100%;
@@ -80,8 +80,8 @@
   width: 100%;
 }
 .modal__table tbody tr td {
-  padding: $xs-box-size 4px;
-  border-bottom: 3px solid $peach;
+  padding: $xs-box-size pxToRem(4);
+  border-bottom: pxToRem(3) solid $peach;
 }
 .book__stars-modal {
   width: 100%;
@@ -92,13 +92,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: $m-box-size 0;
+  margin: $xl-box-size 0;
 }
 /*** Modal Buttons ***/
 .modal__button-top {
   @include horizontalFlex(center, center);
-  width: 35px;
-  height: 35px;
+  width: pxToRem(35);
+  height: pxToRem(35);
   font-size: $l-text-size;
   position: absolute;
   background: transparent;
@@ -113,7 +113,7 @@
 }
 .modal__button-bottom_wrapper {
   flex-grow: 1;
-  min-height: 9rem;
+  min-height: pxToRem(90);
   position: relative;
   display: flex;
   justify-content: center;
@@ -122,12 +122,12 @@
   font-size: $xs-text-size;
   background: $salad;
   color: $white;
-  @include clickInBtn($salad, 50%, 4rem);
+  @include clickInBtn($salad, 50%, pxToRem(40));
   position: absolute;
-  bottom: 15px;
+  bottom: pxToRem(15);
 }
 /* ====== Media Queries ===== */
-@media (min-width: 360px) {
+@media (min-width: pxToRem(360)) {
   .modal {
     padding: $l-box-size;
     top: $m-box-size;
@@ -148,7 +148,7 @@
     font-size: $s-text-size;
   }
 }
-@media (min-width: 480px) {
+@media (min-width: pxToRem(480)) {
   .modal {
     padding: $l-box-size;
     top: $l-box-size;
@@ -163,7 +163,7 @@
     margin: 0 $l-box-size $s-box-size 0;
   }
 }
-@media (orientation: landscape) and (min-width: 360px) and (max-width: 600px) {
+@media (orientation: landscape) and (min-width: pxToRem(360)) and (max-width: pxToRem(600)) {
   .modal {
     top: $s-box-size;
     left: $s-box-size;
@@ -171,17 +171,18 @@
     bottom: $s-box-size;
   }
 }
-@media (min-width: 600px) {
+@media (min-width: pxToRem(600)) {
   .modal__table {
     font-size: $m-text-size;
-    border-spacing: 15px;
+    border-spacing: pxToRem(15);
   }
   .book__stars-modal {
     width: 80%;
-    place-self: center;
+    align-self: center;
+    justify-self: center;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: pxToRem(768)) {
   .modal {
     padding: $l-box-size;
     top: $l-box-size;
@@ -205,7 +206,7 @@
     height: auto;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: pxToRem(960)) {
   .description__heading {
     width: 100%;
   }
@@ -216,12 +217,12 @@
     width: 70%;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: pxToRem(1024)) {
   .modal {
     padding: $xl-box-size;
     top: $xl-box-size;
-    left: 100px;
-    right: 100px;
+    left: pxToRem(100);
+    right: pxToRem(100);
     bottom: $xl-box-size;
   }
   .modal__title {
@@ -234,12 +235,21 @@
     width: 60%;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: pxToRem(1400)) {
   .modal {
     padding: $xxl-box-size;
     top: $xl-box-size;
-    left: 200px;
-    right: 200px;
+    left: pxToRem(200);
+    right: pxToRem(200);
     bottom: $xl-box-size;
+  }
+  .details__block_link {
+    grid-row: 2 / span 3;
+  }
+  .book__stars-modal {
+    grid-column: 2;
+  }
+  .description__p {
+    font-size: $m-text-size;
   }
 }

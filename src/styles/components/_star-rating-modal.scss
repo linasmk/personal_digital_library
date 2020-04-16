@@ -3,7 +3,7 @@
   width: 9%;
 }
 .star-modal {
-  padding: 0 2px;
+  padding: 0 pxToRem(2);
   width: 100%;
   fill: lighten($peach, 50%);
 }
@@ -12,7 +12,7 @@
 }
 
 /* ============= Media Queries ============== */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: pxToRem(600)) {
   .book__stars-modal li {
     width: 7%;
   }

@@ -11,7 +11,7 @@ footer {
 .copyright {
   width: 100%;
   color: #fff;
-  padding: 25px;
+  padding: pxToRem(25);
   text-align: center;
 }
 /* ============= Media Queries ============== */

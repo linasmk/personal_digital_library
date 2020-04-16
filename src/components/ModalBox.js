@@ -5,8 +5,8 @@ import StarRatingModal from "./StarRating_Modal";
 Modal.setAppElement("#app");
 
 const ModalBox = ({
-  selectedOption,
-  handleClearSelectedOption,
+  viewBookModal,
+  clearViewBookModal,
   title,
   author,
   url,
@@ -22,8 +22,8 @@ const ModalBox = ({
   category,
 }) => (
   <Modal
-    isOpen={selectedOption}
-    onRequestClose={handleClearSelectedOption}
+    isOpen={viewBookModal}
+    onRequestClose={clearViewBookModal}
     contentLabel={title}
     closeTimeoutMS={800}
     className="modal"
@@ -80,14 +80,11 @@ const ModalBox = ({
       </div>
       <StarRatingModal />
     </section>
-    <button className="modal__button-top" onClick={handleClearSelectedOption}>
+    <button className="modal__button-top" onClick={clearViewBookModal}>
       <span>&times;</span>
     </button>
     <div className="modal__button-bottom_wrapper">
-      <button
-        className="modal__button-bottom"
-        onClick={handleClearSelectedOption}
-      >
+      <button className="modal__button-bottom" onClick={clearViewBookModal}>
         Okay
       </button>
     </div>

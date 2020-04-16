@@ -5,68 +5,72 @@ import StarRating from "./StarRating";
 
 export default class SearchResult extends React.Component {
   state = {
-    selectedOption: undefined,
+    viewBookModal: undefined,
   };
-  handleModalPopUp = () => {
+  viewBookModalPopUp = () => {
     this.setState(() => ({
-      selectedOption: true,
+      viewBookModal: true,
     }));
   };
-  handleClearSelectedOption = () => {
+  clearViewBookModal = () => {
     this.setState(() => ({
-      selectedOption: undefined,
+      viewBookModal: undefined,
     }));
   };
   render() {
     return (
-      <div className="card__container">
-        <article className="card">
-          <section className="card__main_block">
-            <a
-              className="card__book_link"
-              href={this.props.url}
-              target="_blank"
-            >
-              <BookPicture
-                src={this.props.src}
-                srcSm={this.props.srcSm}
-                srcMd={this.props.srcMd}
-                srcLg={this.props.srcLg}
-                srcXlg={this.props.srcXlg}
-              />
-            </a>
+      <div className="search__result">
+        {this.props.filteredLibrary.map((book, index) => (
+          <div key={book.id.toString()} className="card__container">
+            <article className="card">
+              <section className="card__main_block">
+                <a className="card__book_link" href={book.url} target="_blank">
+                  <BookPicture
+                    src={book.src}
+                    srcSm={book.srcSm}
+                    srcMd={book.srcMd}
+                    srcLg={book.srcLg}
+                    srcXlg={book.srcXlg}
+                  />
+                </a>
 
-            <h2 className="card__book_title">{this.props.title}</h2>
-            <h3 className="card__book_author">
-              <span>by </span>
-              {this.props.author}
-            </h3>
-            <StarRating />
-          </section>
-          <button
-            className="view__more"
-            onClick={this.handleModalPopUp.bind(this)}
-          >
-            View More
-          </button>
-        </article>
-        <ModalBox
-          title={this.props.title}
-          author={this.props.author}
-          url={this.props.url}
-          src={this.props.src}
-          srcSm={this.props.srcSm}
-          srcMd={this.props.srcMd}
-          srcLg={this.props.srcLg}
-          srcXlg={this.props.srcXlg}
-          description={this.props.description}
-          publicationYear={this.props.publicationYear}
-          publisher={this.props.publisher}
-          publicationLength={this.props.publicationLength}
-          category={this.props.category}
-          handleClearSelectedOption={this.handleClearSelectedOption}
-          selectedOption={this.state.selectedOption}
-        />
+                <h2 className="card__book_title">{book.title}</h2>
+                <h3 className="card__book_author">
+                  <span>by </span>
+                  {book.author}
+                </h3>
+                <StarRating />
+                <div className="view__more_box">
+                  <button
+                    className="view__more_btn"
+                    onClick={this.viewBookModalPopUp}
+                  >
+                    View More
+                  </button>
+                </div>
+              </section>
+            </article>
+            <ModalBox
+              //Book info
+              title={book.title}
+              author={book.author}
+              url={book.url}
+              src={book.src}
+              srcSm={book.srcSm}
+              srcMd={book.srcMd}
+              srcLg={book.srcLg}
+              srcXlg={book.srcXlg}
+              description={book.description}
+              publicationYear={book.publicationYear}
+              publisher={book.publisher}
+              publicationLength={book.publicationLength}
+              category={book.category}
+              // Modal handlers
+              clearViewBookModal={this.clearViewBookModal}
+              viewBookModal={this.state.viewBookModal}
+            />
+          </div>
+        ))}
       </div>
     );
   }
