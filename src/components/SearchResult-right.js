@@ -7,6 +7,7 @@ export default class SearchResult extends React.Component {
   state = {
     viewBookModalId: undefined,
   };
+
   viewBookModalPopUp = (bookId) => {
     this.setState({
       viewBookModalId: bookId,
@@ -17,19 +18,12 @@ export default class SearchResult extends React.Component {
       viewBookModalId: undefined,
     }));
   };
-
   render() {
     return (
       <div className="search__result">
-        {this.props.filteredLibrary.map((book, index) => (
+        {this.props.filteredLibrary.map((book) => (
           <div key={book.id.toString()} className="card__container">
             <article className="card">
-              <button
-                className="card__button-top"
-                onClick={() => this.props.deleteBook(book)}
-              >
-                <span>&times;</span>
-              </button>
               <section className="card__main_block">
                 <a className="card__book_link" href={book.url} target="_blank">
                   <BookPicture
@@ -43,7 +37,7 @@ export default class SearchResult extends React.Component {
 
                 <h2 className="card__book_title">{book.title}</h2>
                 <h3 className="card__book_author">
-                  <span>by </span>
+                  <span>by</span>
                   {book.author}
                 </h3>
                 <StarRating />
@@ -57,9 +51,10 @@ export default class SearchResult extends React.Component {
                 </div>
               </section>
             </article>
+
             <ModalBox
               //Book info
-              bookId={book.id}
+              identifier={book.id}
               title={book.title}
               author={book.author}
               url={book.url}
@@ -76,8 +71,6 @@ export default class SearchResult extends React.Component {
               // Modal handlers
               clearViewBookModal={this.clearViewBookModal}
               viewBookModal={this.state.viewBookModalId === book.id}
-              // Book edits
-              editBookInfo={this.props.editBookInfo}
             />
           </div>
         ))}

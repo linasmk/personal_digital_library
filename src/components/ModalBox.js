@@ -5,8 +5,11 @@ import StarRatingModal from "./StarRating_Modal";
 Modal.setAppElement("#app");
 
 const ModalBox = ({
+  bookId,
+  editBookInfo,
   viewBookModal,
   clearViewBookModal,
+  identifier,
   title,
   author,
   url,
@@ -28,15 +31,38 @@ const ModalBox = ({
     closeTimeoutMS={800}
     className="modal"
   >
-    <h2 className="modal__title">{title}</h2>
+    <h2
+      key={identifier}
+      className="modal__title"
+      contentEditable
+      suppressContentEditableWarning
+      onBlur={(e) => editBookInfo("title", e.target.innerText, bookId)}
+    >
+      {title}
+    </h2>
     <h3 className="modal__author">
       <span>by </span>
-      {author}
+      <span
+        contentEditable
+        suppressContentEditableWarning
+        onBlur={(e) => editBookInfo("author", e.target.innerText, bookId)}
+      >
+        {author}
+      </span>
     </h3>
     <section className="modal__details_block">
       <section className="details__block_description">
         <h3 className="description__heading">Description:</h3>
-        <p className="description__p">{description}</p>
+        <p
+          className="description__p"
+          contentEditable
+          suppressContentEditableWarning
+          onBlur={(e) =>
+            editBookInfo("description", e.target.innerText, bookId)
+          }
+        >
+          {description}
+        </p>
       </section>
 
       <a className="details__block_link" href={url} target="_blank">
@@ -53,25 +79,58 @@ const ModalBox = ({
           <tbody>
             <tr>
               <td>Publication Year</td>
-              <td>
+              <td
+                contentEditable
+                suppressContentEditableWarning
+                onBlur={(e) =>
+                  editBookInfo("publicationYear", e.target.innerText, bookId)
+                }
+              >
                 <strong>{publicationYear}</strong>
               </td>
             </tr>
             <tr>
               <td>Publisher</td>
-              <td>
+              <td
+                contentEditable
+                suppressContentEditableWarning
+                onBlur={(e) =>
+                  editBookInfo("publisher", e.target.innerText, bookId)
+                }
+              >
                 <strong>{publisher}</strong>
               </td>
             </tr>
             <tr>
               <td>Publication Length</td>
               <td>
-                <strong>{publicationLength} pages</strong>
+                <strong>
+                  <span
+                    contentEditable
+                    suppressContentEditableWarning
+                    onBlur={(e) =>
+                      editBookInfo(
+                        "publicationLength",
+                        e.target.innerText,
+                        bookId
+                      )
+                    }
+                  >
+                    {publicationLength}
+                  </span>
+                  &nbsp;pages
+                </strong>
               </td>
             </tr>
             <tr>
               <td>Category</td>
-              <td>
+              <td
+                contentEditable
+                suppressContentEditableWarning
+                onBlur={(e) =>
+                  editBookInfo("category", e.target.innerText, bookId)
+                }
+              >
                 <strong>{category}</strong>
               </td>
             </tr>

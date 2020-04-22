@@ -2,6 +2,7 @@
 /**** Modal Portal and Overlay ****/
 .ReactModalPortal > div {
   opacity: 0;
+  z-index: zIndex-layer-2(1);
 }
 .ReactModalPortal .ReactModal__Overlay {
   transition: opacity 0.5s ease-in-out;
@@ -38,7 +39,7 @@
   font-size: $s-text-size;
   //word-break: break-all;
 }
-.modal__author span {
+.modal__author span:nth-child(1) {
   color: $peach;
 }
 /*** Modal Details Block ***/

@@ -62,7 +62,7 @@ export default class AddBookForm extends React.Component {
         closeTimeoutMS={800}
         className="modal"
       >
-        <h2>Add New Book</h2>
+        <h2 className="add__book_hading">Add New Book</h2>
         <form className="addbook__form" onSubmit={this.handleAddBookFormSubmit}>
           <div className="addbook__form_row">
             <div className="addbook__form_column">

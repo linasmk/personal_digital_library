@@ -2,6 +2,7 @@
 .search__block {
   background-color: $white;
   width: 100%;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -16,26 +17,108 @@
   justify-content: center;
   align-items: center;
 }
-
 .search__query-input {
   margin: 0;
   padding: pxToRem(10);
   width: 60%;
   height: pxToRem(40);
+  border: 2px solid $peachBrighter;
+  &:focus {
+    outline: none;
+  }
 }
 .search__query-dropdown {
   width: 40%;
-  height: pxToRem(40);
+  font-family: $nunito;
+  font-size: $xs-text-size;
+  position: relative;
+  z-index: zIndex-layer-1(5);
+  @include noHighlightAndSelect;
 }
 .search__query-dropdown--toggle {
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: pxToRem(40);
+  border: none;
+  padding: 0;
+  z-index: zIndex-layer-1(3);
+  @include flippingBtn($peach, $peachBrighter);
 }
 .dropdown__toggle_caret {
   margin-top: 0;
 }
-
+.search__query-dropdown--slider {
+  width: 100%;
+  max-height: 0px;
+  overflow: hidden;
+  position: absolute;
+  @include ulStyle;
+  z-index: 5;
+  opacity: 0;
+  top: pxToRem(40);
+  transition: max-height 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+.search__query-dropdown--item {
+  width: 100%;
+}
+.search__query-dropdown--btn {
+  width: 100%;
+  height: pxToRem(40);
+  line-height: pxToRem(40);
+  display: inline-block;
+  text-decoration: none;
+  padding-left: pxToRem(15);
+  background-color: $white;
+  color: $black;
+  border: 1px solid $peach;
+  text-align: left;
+  // transition: height 0.5s ease;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: $lightGrey;
+  }
+}
+.dropdown-divider {
+  width: 100%;
+  height: pxToRem(5);
+  background-color: $lightGrey;
+  border: 1px solid $lightGrey;
+}
+/* ============= Helper Classess ============== */
+.active-accordion {
+  max-height: 100px;
+  overflow: visible;
+  opacity: 1;
+}
+.active-dropdown--item {
+  color: $peach;
+}
 /* ============= Media Queries ============== */
+@media (min-width: pxToRem(768)) {
+  .search__query {
+    width: 75%;
+  }
+  .search__query-input {
+    width: 70%;
+  }
+  .search__query-dropdown {
+    width: 30%;
+  }
+}
+@media (min-width: pxToRem(1024)) {
+  .search__query {
+    width: 65%;
+  }
+}
+@media (min-width: pxToRem(1400)) {
+  .search__query {
+    width: 40%;
+  }
+  .search__query-input {
+    width: 80%;
+  }
+  .search__query-dropdown {
+    width: 20%;
+  }
+}
