@@ -9,8 +9,7 @@ module.exports = {
     filename: "bundle.js"
   },
   module: {
-    rules: [
-      {
+    rules: [{
         loader: "babel-loader",
         test: /\.js$/,
         exclude: /node_modules/
@@ -23,6 +22,10 @@ module.exports = {
   },
   devtool: "cheap-module-eval-source-map",
   devServer: {
-    contentBase: path.join(__dirname, "public")
+    contentBase: path.join(__dirname, "public"),
+    /* historyApiFallback tells the dev-server that the routing
+    is handled via client-side code and that it should return index.html for
+    all 404 routes. */
+    historyApiFallback: true
   }
 };

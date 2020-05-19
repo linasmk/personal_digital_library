@@ -1,9 +1,13 @@
+/* ===== App Dependencies ===== */
 import React from "react";
 import ReactDOM from "react-dom";
+import AppRouter from "./routers/AppRouter";
+/* ===== Styles and Components ===== */
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
-// Components
-import PersonalDigitalLibraryApp from "./components/PersonalDigitalLibraryApp";
+
+
+
 
 const appRoot = document.querySelector("#app");
-ReactDOM.render(<PersonalDigitalLibraryApp />, appRoot);
+ReactDOM.render(<AppRouter />, appRoot);
