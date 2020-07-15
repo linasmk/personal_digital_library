@@ -24,7 +24,6 @@ export default class SearchBlock extends React.Component {
           />
           <nav className="search__query-dropdown">
             <button
-              //https://codepen.io/LinasYesterday/pen/ExVKxzM
               className="search__query-dropdown--toggle"
               data-back={this.props.orderBy}
               data-front="Sort by"

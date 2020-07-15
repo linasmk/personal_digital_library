@@ -1,87 +1,150 @@
-import React from "react";
+/* =============== Dependencies ============= */
+import React, { useState } from "react";
+
+/* ========== Redux ============= */
+import { connect } from "react-redux";
+import getVisibleBooks from "../store/selectors";
+
+/* ============== Components ================= */
 import BookPicture from "./BookPicture";
 import ModalBox from "./ModalBox";
 import StarRating from "./StarRating";
 
-export default class SearchResult extends React.Component {
-  state = {
-    viewBookModalId: undefined,
-  };
-  viewBookModalPopUp = (bookId) => {
-    this.setState({
-      viewBookModalId: bookId,
-    });
-  };
-  clearViewBookModal = () => {
-    this.setState(() => ({
-      viewBookModalId: undefined,
-    }));
-  };
+/* =============== Code ======================== */
+const SearchResult = (props) => {
+  const [viewBookModalId, setBookModallId] = useState(undefined);
 
-  render() {
-    return (
-      <div className="search__result">
-        {this.props.filteredLibrary.map((book, index) => (
-          <div key={book.id.toString()} className="card__container">
-            <article className="card">
-              <button
-                className="card__button-top"
-                onClick={() => this.props.deleteBook(book)}
-              >
-                <span>&times;</span>
-              </button>
-              <section className="card__main_block">
-                <a className="card__book_link" href={book.url} target="_blank">
-                  <BookPicture
-                    src={book.src}
-                    srcSm={book.srcSm}
-                    srcMd={book.srcMd}
-                    srcLg={book.srcLg}
-                    srcXlg={book.srcXlg}
-                  />
-                </a>
+  const viewBookModalPopUp = (id) => setBookModallId(id);
+  const clearViewBookModal = () => setBookModallId(undefined);
 
-                <h2 className="card__book_title">{book.title}</h2>
-                <h3 className="card__book_author">
-                  <span>by </span>
-                  {book.author}
-                </h3>
-                <StarRating />
-                <div className="view__more_box">
-                  <button
-                    className="view__more_btn"
-                    onClick={() => this.viewBookModalPopUp(book.id)}
-                  >
-                    View More
-                  </button>
-                </div>
-              </section>
-            </article>
-            <ModalBox
-              //Book info
-              bookId={book.id}
-              title={book.title}
-              author={book.author}
-              url={book.url}
-              src={book.src}
-              srcSm={book.srcSm}
-              srcMd={book.srcMd}
-              srcLg={book.srcLg}
-              srcXlg={book.srcXlg}
-              description={book.description}
-              publicationYear={book.publicationYear}
-              publisher={book.publisher}
-              publicationLength={book.publicationLength}
-              category={book.category}
-              // Modal handlers
-              clearViewBookModal={this.clearViewBookModal}
-              viewBookModal={this.state.viewBookModalId === book.id}
-              // Book edits
-              editBookInfo={this.props.editBookInfo}
-            />
-          </div>
-        ))}
-      </div>
-    );
-  }
-}
+  return (
+    <div className="search__result">
+      {props.books.map((book) => (
+        <div key={book.id.toString()} className="card__container">
+          <article className="card">
+            <button
+              className="card__button-top"
+              onClick={() => props.deleteBook(book)}
+            >
+              <span>&times;</span>
+            </button>
+            <section className="card__main_block">
+              <a className="card__book_link" href={book.url} target="_blank">
+                <BookPicture
+                  src={book.src}
+                  srcSm={book.srcSm}
+                  srcMd={book.srcMd}
+                  srcLg={book.srcLg}
+                  srcXlg={book.srcXlg}
+                />
+              </a>
+
+              <h2 className="card__book_title">{book.title}</h2>
+              <h3 className="card__book_author">
+                <span>by </span>
+                {book.author}
+              </h3>
+              <StarRating />
+              <div className="view__more_box">
+                <button
+                  className="view__more_btn"
+                  onClick={() => viewBookModalPopUp(book.id)}
+                >
+                  View More
+                </button>
+              </div>
+            </section>
+          </article>
+          <ModalBox
+            //Book info
+            key={book.id}
+            {...book}
+            // Modal handlers
+            clearViewBookModal={clearViewBookModal}
+            viewBookModal={viewBookModalId === book.id}
+            // Book edits
+            editBookInfo={props.editBookInfo}
+          />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    books: getVisibleBooks(state.books),
+  };
+};
+export default connect(mapStateToProps)(SearchResult);
+
+// class SearchResult extends React.Component {
+//   state = {
+//     viewBookModalId: undefined,
+//   };
+//   viewBookModalPopUp = (bookId) => {
+//     this.setState({
+//       viewBookModalId: bookId,
+//     });
+//   };
+//   clearViewBookModal = () => {
+//     this.setState(() => ({
+//       viewBookModalId: undefined,
+//     }));
+//   };
+
+//   render() {
+//     return (
+//       <div className="search__result">
+//         {this.props.books.map((book) => (
+//           <div key={book.id.toString()} className="card__container">
+//             <article className="card">
+//               <button
+//                 className="card__button-top"
+//                 onClick={() => this.props.deleteBook(book)}
+//               >
+//                 <span>&times;</span>
+//               </button>
+//               <section className="card__main_block">
+//                 <a className="card__book_link" href={book.url} target="_blank">
+//                   <BookPicture
+//                     src={book.src}
+//                     srcSm={book.srcSm}
+//                     srcMd={book.srcMd}
+//                     srcLg={book.srcLg}
+//                     srcXlg={book.srcXlg}
+//                   />
+//                 </a>
+
+//                 <h2 className="card__book_title">{book.title}</h2>
+//                 <h3 className="card__book_author">
+//                   <span>by </span>
+//                   {book.author}
+//                 </h3>
+//                 <StarRating />
+//                 <div className="view__more_box">
+//                   <button
+//                     className="view__more_btn"
+//                     onClick={() => this.viewBookModalPopUp(book.id)}
+//                   >
+//                     View More
+//                   </button>
+//                 </div>
+//               </section>
+//             </article>
+//             <ModalBox
+//               //Book info
+//               key={book.id}
+//               {...book}
+//               // Modal handlers
+//               clearViewBookModal={this.clearViewBookModal}
+//               viewBookModal={this.state.viewBookModalId === book.id}
+//               // Book edits
+//               editBookInfo={this.props.editBookInfo}
+//             />
+//           </div>
+//         ))}
+//       </div>
+//     );
+//   }
+// }

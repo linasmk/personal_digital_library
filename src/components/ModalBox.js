@@ -5,24 +5,27 @@ import StarRatingModal from "./StarRating_Modal";
 Modal.setAppElement("#app");
 
 const ModalBox = ({
-  bookId,
+  //Handlers
   editBookInfo,
   viewBookModal,
   clearViewBookModal,
-  identifier,
+  //Props
+  id,
   title,
   author,
-  url,
-  src,
-  srcSm,
-  srcMd,
-  srcLg,
-  srcXlg,
   description,
   publicationYear,
   publisher,
   publicationLength,
   category,
+  rating,
+  url,
+  imgLink,
+  src,
+  srcSm,
+  srcMd,
+  srcLg,
+  srcXlg,
 }) => (
   <Modal
     isOpen={viewBookModal}
@@ -32,11 +35,10 @@ const ModalBox = ({
     className="modal"
   >
     <h2
-      key={identifier}
       className="modal__title"
       contentEditable
       suppressContentEditableWarning
-      onBlur={(e) => editBookInfo("title", e.target.innerText, bookId)}
+      onBlur={(e) => editBookInfo("title", e.target.innerText, id)}
     >
       {title}
     </h2>
@@ -45,7 +47,7 @@ const ModalBox = ({
       <span
         contentEditable
         suppressContentEditableWarning
-        onBlur={(e) => editBookInfo("author", e.target.innerText, bookId)}
+        onBlur={(e) => editBookInfo("author", e.target.innerText, id)}
       >
         {author}
       </span>
@@ -57,9 +59,7 @@ const ModalBox = ({
           className="description__p"
           contentEditable
           suppressContentEditableWarning
-          onBlur={(e) =>
-            editBookInfo("description", e.target.innerText, bookId)
-          }
+          onBlur={(e) => editBookInfo("description", e.target.innerText, id)}
         >
           {description}
         </p>
@@ -83,7 +83,7 @@ const ModalBox = ({
                 contentEditable
                 suppressContentEditableWarning
                 onBlur={(e) =>
-                  editBookInfo("publicationYear", e.target.innerText, bookId)
+                  editBookInfo("publicationYear", e.target.innerText, id)
                 }
               >
                 <strong>{publicationYear}</strong>
@@ -95,7 +95,7 @@ const ModalBox = ({
                 contentEditable
                 suppressContentEditableWarning
                 onBlur={(e) =>
-                  editBookInfo("publisher", e.target.innerText, bookId)
+                  editBookInfo("publisher", e.target.innerText, id)
                 }
               >
                 <strong>{publisher}</strong>
@@ -109,11 +109,7 @@ const ModalBox = ({
                     contentEditable
                     suppressContentEditableWarning
                     onBlur={(e) =>
-                      editBookInfo(
-                        "publicationLength",
-                        e.target.innerText,
-                        bookId
-                      )
+                      editBookInfo("publicationLength", e.target.innerText, id)
                     }
                   >
                     {publicationLength}
@@ -127,9 +123,7 @@ const ModalBox = ({
               <td
                 contentEditable
                 suppressContentEditableWarning
-                onBlur={(e) =>
-                  editBookInfo("category", e.target.innerText, bookId)
-                }
+                onBlur={(e) => editBookInfo("category", e.target.innerText, id)}
               >
                 <strong>{category}</strong>
               </td>

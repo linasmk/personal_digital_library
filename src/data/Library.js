@@ -1,5 +1,4 @@
-/* =============== Dependencies ============= */
-
+import React from "react";
 const library = [
   {
     id: "2000",
@@ -15,11 +14,18 @@ const library = [
     url:
       "https://www.amazon.com/Gamify-Gamification-Motivates-People-Extraordinary-ebook/dp/B00I2ZW47W",
     rating: 7,
-    src: "img/book_covers/gamify324x500.jpg",
-    srcSm: "img/book_covers/gamify80x123.jpg",
-    srcMd: "img/book_covers/gamify120x185.jpg",
-    srcLg: "img/book_covers/gamify200x307.jpg",
-    srcXlg: "img/book_covers/gamify250x386.jpg",
+    src:
+      "https://images-na.ssl-images-amazon.com/images/I/41RcuRuB5mL._SX317_BO1,204,203,200_.jpg",
+    srcSm:
+      "https://images-na.ssl-images-amazon.com/images/I/41RcuRuB5mL._SX317_BO1,204,203,200_.jpg",
+    srcMd:
+      "https://images-na.ssl-images-amazon.com/images/I/41RcuRuB5mL._SX317_BO1,204,203,200_.jpg",
+    srcLg:
+      "https://images-na.ssl-images-amazon.com/images/I/41RcuRuB5mL._SX317_BO1,204,203,200_.jpg",
+    srcXlg:
+      "https://images-na.ssl-images-amazon.com/images/I/41RcuRuB5mL._SX317_BO1,204,203,200_.jpg",
+    imgLink:
+      "https://images-na.ssl-images-amazon.com/images/I/41RcuRuB5mL._SX317_BO1,204,203,200_.jpg",
   },
   {
     id: "5000",
@@ -33,11 +39,18 @@ const library = [
     category: "cognitive science",
     url: "https://www.amazon.com/Mind-As-Machine-Cognitive-Two/dp/0199241449",
     rating: 6,
-    src: "img/book_covers/mind_as_machine396x499.jpg",
-    srcSm: "img/book_covers/mind_as_machine80x101.jpg",
-    srcMd: "img/book_covers/mind_as_machine120x151.jpg",
-    srcLg: "img/book_covers/mind_as_machine200x252.jpg",
-    srcXlg: "img/book_covers/mind_as_machine250x315.jpg",
+    src:
+      "https://images-na.ssl-images-amazon.com/images/I/3103q7Ktj4L._SX346_BO1,204,203,200_.jpg",
+    srcSm:
+      "https://images-na.ssl-images-amazon.com/images/I/3103q7Ktj4L._SX346_BO1,204,203,200_.jpg",
+    srcMd:
+      "https://images-na.ssl-images-amazon.com/images/I/3103q7Ktj4L._SX346_BO1,204,203,200_.jpg",
+    srcLg:
+      "https://images-na.ssl-images-amazon.com/images/I/3103q7Ktj4L._SX346_BO1,204,203,200_.jpg",
+    srcXlg:
+      "https://images-na.ssl-images-amazon.com/images/I/3103q7Ktj4L._SX346_BO1,204,203,200_.jpg",
+    imgLink:
+      "https://images-na.ssl-images-amazon.com/images/I/3103q7Ktj4L._SX346_BO1,204,203,200_.jpg",
   },
   {
     id: "5001",
@@ -52,11 +65,18 @@ const library = [
     url:
       "https://www.amazon.com/Bottlenecks-Aligning-Design-User-Psychology-ebook-dp-B06W2J32CK/dp/B06W2J32CK/ref=mt_kindle?_encoding=UTF8&me=&qid=",
     rating: 9,
-    src: "img/book_covers/bottlenecks330x499.jpg",
-    srcSm: "img/book_covers/bottlenecks80x120.jpg",
-    srcMd: "img/book_covers/bottlenecks120x181.jpg",
-    srcLg: "img/book_covers/bottlenecks200x302.jpg",
-    srcXlg: "img/book_covers/bottlenecks250x379.jpg",
+    src:
+      "https://images-na.ssl-images-amazon.com/images/I/51UUbPCkVwL._SX328_BO1,204,203,200_.jpg",
+    srcSm:
+      "https://images-na.ssl-images-amazon.com/images/I/51UUbPCkVwL._SX328_BO1,204,203,200_.jpg",
+    srcMd:
+      "https://images-na.ssl-images-amazon.com/images/I/51UUbPCkVwL._SX328_BO1,204,203,200_.jpg",
+    srcLg:
+      "https://images-na.ssl-images-amazon.com/images/I/51UUbPCkVwL._SX328_BO1,204,203,200_.jpg",
+    srcXlg:
+      "https://images-na.ssl-images-amazon.com/images/I/51UUbPCkVwL._SX328_BO1,204,203,200_.jpg",
+    imgLink:
+      "https://images-na.ssl-images-amazon.com/images/I/51UUbPCkVwL._SX328_BO1,204,203,200_.jpg",
   },
   {
     id: "6000",
@@ -71,11 +91,18 @@ const library = [
     url:
       "https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742",
     rating: 8,
-    src: "img/book_covers/js_the_good_parts383x499.jpg",
-    srcSm: "img/book_covers/js_the_good_parts80x104.jpg",
-    srcMd: "img/book_covers/js_the_good_parts120x156.jpg",
-    srcLg: "img/book_covers/js_the_good_parts200x260.jpg",
-    srcXlg: "img/book_covers/js_the_good_parts250x325.jpg",
+    src:
+      "https://images-na.ssl-images-amazon.com/images/I/5131OWtQRaL._SX381_BO1,204,203,200_.jpg",
+    srcSm:
+      "https://images-na.ssl-images-amazon.com/images/I/5131OWtQRaL._SX381_BO1,204,203,200_.jpg",
+    srcMd:
+      "https://images-na.ssl-images-amazon.com/images/I/5131OWtQRaL._SX381_BO1,204,203,200_.jpg",
+    srcLg:
+      "https://images-na.ssl-images-amazon.com/images/I/5131OWtQRaL._SX381_BO1,204,203,200_.jpg",
+    srcXlg:
+      "https://images-na.ssl-images-amazon.com/images/I/5131OWtQRaL._SX381_BO1,204,203,200_.jpg",
+    imgLink:
+      "https://images-na.ssl-images-amazon.com/images/I/5131OWtQRaL._SX381_BO1,204,203,200_.jpg",
   },
   {
     id: "1000",
@@ -90,11 +117,18 @@ const library = [
     url:
       "https://www.amazon.com/Power-Habit-What-Life-Business/dp/1400069289/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1582294939&sr=1-1",
     rating: 7,
-    src: "img/book_covers/the_power_of_habit329x499.jpg",
-    srcSm: "img/book_covers/the_power_of_habit80x121.jpg",
-    srcMd: "img/book_covers/the_power_of_habit120x182.jpg",
-    srcLg: "img/book_covers/the_power_of_habit200x303.jpg",
-    srcXlg: "img/book_covers/the_power_of_habit250x379.jpg",
+    src:
+      "https://images-na.ssl-images-amazon.com/images/I/517FwF49v+L._SX322_BO1,204,203,200_.jpg",
+    srcSm:
+      "https://images-na.ssl-images-amazon.com/images/I/517FwF49v+L._SX322_BO1,204,203,200_.jpg",
+    srcMd:
+      "https://images-na.ssl-images-amazon.com/images/I/517FwF49v+L._SX322_BO1,204,203,200_.jpg",
+    srcLg:
+      "https://images-na.ssl-images-amazon.com/images/I/517FwF49v+L._SX322_BO1,204,203,200_.jpg",
+    srcXlg:
+      "https://images-na.ssl-images-amazon.com/images/I/517FwF49v+L._SX322_BO1,204,203,200_.jpg",
+    imgLink:
+      "https://images-na.ssl-images-amazon.com/images/I/517FwF49v+L._SX322_BO1,204,203,200_.jpg",
   },
 ];
 export default library;

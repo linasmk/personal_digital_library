@@ -1,11 +1,15 @@
+/* =============== Dependencies ============= */
 import React, { Component } from "react";
-import Header from "./Header";
-import library from "./Library";
-import SearchBlock from "./SearchBlock";
-import AddBook from "./AddBook";
-import Footer from "./Footer";
-import SearchResult from "./SearchResult";
 import { without, findIndex } from "lodash";
+/* ================= Components ================= */
+import Header from "../Header";
+import library from "../../data/Library";
+import SearchBlock from "../SearchBlock";
+import AddBook from "../AddBook";
+import Footer from "../Footer";
+import SearchResult from "../SearchResult";
+
+/* ================= Code ================= */
 
 export default class PersonalDigitalLibraryApp extends Component {
   state = {
@@ -91,12 +95,7 @@ export default class PersonalDigitalLibraryApp extends Component {
             .includes(this.state.search.toLowerCase())
         );
       });
-    // old
-    // let filteredLibrary = this.state.library.filter((book) => {
-    //   return (
-    //     book.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
-    //   );
-    // });
+
     return (
       <div className="container">
         <Header />
