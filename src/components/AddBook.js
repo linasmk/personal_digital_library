@@ -1,9 +1,16 @@
+/* ============ Dependencies ============= */
 import React, { Component } from "react";
 import { FaPlus } from "react-icons/fa";
+/* ============== Redux =============== */
+import { connect } from "react-redux";
+import { addBook } from "../store/actionCreators";
+/* ============ Components ============== */
 import AddBookForm from "./AddBookForm";
 
-export default class AddBook extends Component {
-  //There cannot be no 'this' keyword before props in functional component.
+/* =============== Code ================= */
+
+class AddBook extends Component {
+  //There cannot be 'this' keyword before props in functional component.
   state = {
     addNewBookModal: undefined,
   };
@@ -27,11 +34,14 @@ export default class AddBook extends Component {
           <FaPlus className="button__addbook_icon" />
         </button>
         <AddBookForm
+          onSubmit={(book) => {
+            this.props.dispatch(addBook(book));
+          }}
           clearAddNewBookModal={this.clearAddNewBookModal}
           addNewBookModal={this.state.addNewBookModal}
-          addNewBookDetails={this.props.addNewBookDetails}
         />
       </section>
     );
   }
 }
+export default connect()(AddBook);

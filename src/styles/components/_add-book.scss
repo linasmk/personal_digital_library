@@ -2,6 +2,7 @@
 .addbook__wraper {
   width: 100%;
 }
+
 .button__addbook {
   position: fixed;
   right: 2%;
@@ -16,59 +17,75 @@
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.5s ease-in-out;
   z-index: zIndex-layer-1(3);
+
   &:hover {
     transform: scale(1.19);
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8),
       inset 0px 0px 1px rgba(0, 0, 0, 0.8);
   }
+
   &:focus-within {
     outline: none;
   }
 }
+
 .button__addbook:hover .button__addbook_icon {
   transform: scale(1.5);
 }
+
 .button__addbook_icon {
   fill: $lightGrey;
   width: pxToRem(20);
   font-size: pxToRem(50);
   transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 /* ========= Add Book Form ========== */
 .add__book_hading {
   margin: pxToRem(15) 0;
 }
+
 /* **** Input Styles **** */
+.addbook-form__warning {
+  color: $red;
+}
+
 .addbook__form_row {
   width: 100%;
   @include verticalFlex(center, center);
   margin: $s-box-size 0;
 }
+
 .addbook__form_column {
   position: relative;
   margin: $s-box-size 0;
   width: 80%;
   height: pxToRem(50);
 }
+
 .addbook__form_input {
   width: 100%;
   height: 100%;
   padding-top: $l-box-size;
   font-size: $s-text-size;
   border: none;
+
   &:focus-within {
     outline: none;
   }
 }
-.addbook__form_input:focus + .addbook__form_label .addbook__form_content,
-.addbook__form_input:valid + .addbook__form_label .addbook__form_content {
+
+.addbook__form_input:focus+.addbook__form_label .addbook__form_content,
+.addbook__form_input:valid+.addbook__form_label .addbook__form_content {
   transform: translateY(-150%);
   color: $peach;
 }
-.addbook__form_input:focus + .addbook__form_label::after,
-.addbook__form_input:valid + .addbook__form_label::after {
+
+.addbook__form_input:focus+.addbook__form_label::after,
+.addbook__form_input:valid+.addbook__form_label::after {
   transform: translateX(0%);
 }
+
 .addbook__form_label {
   position: absolute;
   bottom: pxToRem(0);
@@ -77,6 +94,7 @@
   height: 100%;
   pointer-events: none;
   overflow: hidden;
+
   &::after {
     content: "";
     position: absolute;
@@ -89,6 +107,7 @@
     transition: transform 0.8s ease-in-out;
   }
 }
+
 .addbook__form_content {
   position: absolute;
   left: 0rem;
@@ -97,6 +116,7 @@
   color: lighten($black, 50%);
   transition: all 0.3s ease-in-out;
 }
+
 /* **** Textarea Styles **** */
 .addbook__form_column-textarea {
   position: relative;
@@ -105,6 +125,7 @@
   display: flex;
   align-items: flex-end;
 }
+
 .addbook__form_textarea {
   width: 100%;
   height: pxToRem(150);
@@ -114,23 +135,23 @@
   overflow: hidden;
   box-sizing: border-box;
   border: none;
+
   &:focus-within {
     outline: none;
   }
 }
-.addbook__form_textarea:focus
-  + .addbook__form_label-textarea
-  .addbook__form_content-textarea,
-.addbook__form_textarea:valid
-  + .addbook__form_label-textarea
-  .addbook__form_content-textarea {
+
+.addbook__form_textarea:focus+.addbook__form_label-textarea .addbook__form_content-textarea,
+.addbook__form_textarea:valid+.addbook__form_label-textarea .addbook__form_content-textarea {
   transform: translateY(pxToRem(-50));
   color: $peach;
 }
-.addbook__form_textarea:focus + .addbook__form_label-textarea::after,
-.addbook__form_textarea:valid + .addbook__form_label-textarea::after {
+
+.addbook__form_textarea:focus+.addbook__form_label-textarea::after,
+.addbook__form_textarea:valid+.addbook__form_label-textarea::after {
   transform: translateX(0%);
 }
+
 .addbook__form_label-textarea {
   position: absolute;
   bottom: 0rem;
@@ -139,6 +160,7 @@
   height: 100%;
   pointer-events: none;
   overflow: hidden;
+
   &::after {
     content: "";
     position: absolute;
@@ -151,6 +173,7 @@
     transition: transform 0.8s ease-in-out;
   }
 }
+
 .addbook__form_content-textarea {
   position: absolute;
   color: lighten($black, 50%);
@@ -159,6 +182,7 @@
   font-size: $s-text-size;
   transition: all 0.3s ease-in-out;
 }
+
 /* ============= Media Queries ============== */
 @media (min-width: pxToRem(600)) {
   .addbook__form_row {
@@ -167,13 +191,16 @@
     flex-direction: row;
     justify-content: space-between;
   }
+
   .addbook__form_column {
     width: 40%;
   }
+
   .addbook__form_column-textarea {
     width: 100%;
   }
 }
+
 @media (min-width: pxToRem(1024)) {
   .addbook__form_row {
     width: 80%;

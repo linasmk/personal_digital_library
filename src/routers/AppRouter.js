@@ -10,12 +10,10 @@ import NotFoundPage from "../components/pages/NotFoundPage";
 /* =============== Code  ================== */
 const AppRouter = () => (
   <BrowserRouter>
-    <div>
-      <Switch>
-        <Route path="/" component={LibraryPage} exact={true} />
-        <Route component={NotFoundPage} />
-      </Switch>
-    </div>
+    <Switch>
+      <Route path="/" component={LibraryPage} exact={true} />
+      <Route component={NotFoundPage} />
+    </Switch>
   </BrowserRouter>
 );
 

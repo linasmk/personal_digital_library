@@ -13,7 +13,7 @@ const library = [
     category: "business",
     url:
       "https://www.amazon.com/Gamify-Gamification-Motivates-People-Extraordinary-ebook/dp/B00I2ZW47W",
-    rating: 7,
+    rating: "7",
     src:
       "https://images-na.ssl-images-amazon.com/images/I/41RcuRuB5mL._SX317_BO1,204,203,200_.jpg",
     srcSm:

@@ -1,7 +1,13 @@
+/* ========== Dependencies ============ */
 import React from "react";
+
+/* ========== Components ============ */
 import BookPicture from "./BookPicture";
 import Modal from "react-modal";
 import StarRatingModal from "./StarRating_Modal";
+
+/* ========== Code ============ */
+
 Modal.setAppElement("#app");
 
 const ModalBox = ({

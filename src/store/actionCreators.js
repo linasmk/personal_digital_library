@@ -6,7 +6,7 @@ import AddBook from "../components/AddBook";
 ============================================ */
 
 // ADD_BOOK
-export const AddBook = ({
+export const addBook = ({
   title = "",
   author = "",
   description = "",
@@ -17,11 +17,6 @@ export const AddBook = ({
   rating = 0,
   url = "",
   imgLink = "",
-  src = "",
-  srcSm = "",
-  srcMd = "",
-  srcLg = "",
-  srcXlg = "",
 } = {}) => ({
   type: "ADD_BOOK",
   book: {
@@ -36,11 +31,21 @@ export const AddBook = ({
     rating: rating,
     url: url,
     imgLink: imgLink,
-    src: src,
-    srcSm: srcSm,
-    srcMd: srcMd,
-    srcLg: srcLg,
-    srcXlg: srcXlg,
+    src: imgLink,
+    srcSm: imgLink,
+    srcMd: imgLink,
+    srcLg: imgLink,
+    srcXlg: imgLink,
   },
 });
 // REMOVE_BOOK
+export const removeBook = ({ id } = {}) => ({
+  type: "REMOVE_BOOK",
+  id,
+});
+// EDIT_BOOK
+export const editBook = (id, updates) => ({
+  type: "EDIT_BOOK",
+  id,
+  updates,
+});

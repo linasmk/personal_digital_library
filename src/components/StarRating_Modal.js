@@ -3,7 +3,7 @@ import StarModal from "./Star_Modal";
 
 class StarRatingModal extends Component {
   state = {
-    rating: 0
+    rating: 0,
   };
   renderStarRating = () => {
     let stars = [];
@@ -19,7 +19,7 @@ class StarRatingModal extends Component {
     }
     return stars;
   };
-  handleSetRating = rating => {
+  handleSetRating = (rating) => {
     if (this.state.rating === rating) {
       this.setState({ rating: 0 });
     } else {

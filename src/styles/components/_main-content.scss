@@ -1,4 +1,11 @@
 /* ========== Main Content ============== */
-.main__content {
-  position: relative;
+.container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.main-content {
+	position: relative;
+	min-height: 60vh;
 }

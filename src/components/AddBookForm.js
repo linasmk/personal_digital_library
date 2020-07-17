@@ -1,57 +1,110 @@
+/* ============ Dependencies ============= */
 import React from "react";
 import Modal from "react-modal";
 Modal.setAppElement("#app");
 
-export default class AddBookForm extends React.Component {
+/* ============== Redux =============== */
+
+/* ============ Components ============== */
+/* =============== Code ================= */
+class AddBookForm extends React.Component {
   state = {
-    title: "",
-    author: "",
-    publicationYear: "",
-    publicationLength: "",
-    publisher: "",
-    url: "",
-    category: "",
-    rating: "",
-    src: "",
-    description: "",
+    title: this.props.book ? this.props.book.title : "",
+    author: this.props.book ? this.props.book.author : "",
+    description: this.props.book ? this.props.book.description : "",
+    publicationYear: this.props.book ? this.props.book.publicationYear : "",
+    publisher: this.props.book ? this.props.book.publisher : "",
+    publicationLength: this.props.book ? this.props.book.publicationLength : "",
+    category: this.props.book ? this.props.book.category : "",
+    url: this.props.book ? this.props.book.url : "",
+    rating: this.props.book ? this.props.book.rating : "",
+    imgLink: this.props.book ? this.props.book.imgLink : "",
+    error: "",
   };
-  handleAddBookFormChange = (e) => {
-    const target = e.target;
-    const value = target.value;
-    const name = target.name;
-    this.setState({
-      [name]: value,
-    });
-  };
-  handleAddBookFormSubmit = (e) => {
-    e.preventDefault();
-    console.log("Submited");
-    let tempBook = {
-      title: this.state.title,
-      author: this.state.author,
-      publicationYear: this.state.publicationYear,
-      publicationLength: this.state.publicationLength,
-      publisher: this.state.publisher,
-      url: this.state.url,
-      category: this.state.category,
-      rating: this.state.rating,
-      src: this.state.src,
-      description: this.state.description,
-    };
-    this.props.addNewBookDetails(tempBook);
+  onTitleChange = (e) => {
+    const title = e.target.value;
     this.setState(() => ({
-      title: "",
-      author: "",
-      publicationYear: "",
-      publicationLength: "",
-      publisher: "",
-      url: "",
-      category: "",
-      rating: "",
-      src: "",
-      description: "",
+      title,
     }));
-    this.props.clearAddNewBookModal();
+  };
+  onAuthorChange = (e) => {
+    const author = e.target.value;
+    this.setState(() => ({
+      author,
+    }));
+  };
+  onDescriptionChange = (e) => {
+    const description = e.target.value;
+    this.setState(() => ({
+      description,
+    }));
+  };
+  onPublicationYearChange = (e) => {
+    const publicationYear = e.target.value;
+    this.setState(() => ({
+      publicationYear,
+    }));
+  };
+  onPublisherChange = (e) => {
+    const publisher = e.target.value;
+    this.setState(() => ({
+      publisher,
+    }));
+  };
+  onPublicationLengthChange = (e) => {
+    const publicationLength = e.target.value;
+    this.setState(() => ({
+      publicationLength,
+    }));
+  };
+  onCategoryChange = (e) => {
+    const category = e.target.value;
+    this.setState(() => ({
+      category,
+    }));
+  };
+  onUrlChange = (e) => {
+    const url = e.target.value;
+    this.setState(() => ({
+      url,
+    }));
+  };
+  onRatingChange = (e) => {
+    const rating = e.target.value;
+    this.setState(() => ({
+      rating,
+    }));
+  };
+  onImgLinkChange = (e) => {
+    const imgLink = e.target.value;
+    this.setState(() => ({
+      imgLink,
+    }));
+  };
+  onSubmit = (e) => {
+    e.preventDefault();
+    if (!this.state.title) {
+      this.setState(() => ({
+        error: "Title's name field should not stay empty!",
+      }));
+    } else {
+      this.setState(() => ({
+        error: "",
+      }));
+      this.props.onSubmit({
+        title: this.state.title,
+        author: this.state.author,
+        description: this.state.description,
+        publicationYear: this.state.publicationYear,
+        publisher: this.state.publisher,
+        publicationLength: this.state.publicationLength,
+        category: this.state.category,
+        url: this.state.url,
+        rating: this.state.rating,
+        imgLink: this.state.imgLink,
+      });
+      this.props.clearAddNewBookModal();
+    }
   };
   render() {
     return (
@@ -63,17 +116,19 @@ export default class AddBookForm extends React.Component {
         className="modal"
       >
         <h2 className="add__book_hading">Add New Book</h2>
-        <form className="addbook__form" onSubmit={this.handleAddBookFormSubmit}>
+        <form className="addbook__form" onSubmit={this.onSubmit}>
+          {this.state.error && (
+            <p className="addbook-form__warning">{this.state.error}</p>
+          )}
           <div className="addbook__form_row">
             <div className="addbook__form_column">
               <input
                 className="addbook__form_input"
                 type="text"
-                name="title"
                 required
                 autoComplete="off"
                 value={this.state.title}
-                onChange={this.handleAddBookFormChange}
+                onChange={this.onTitleChange}
               />
               <label htmlFor="title" className="addbook__form_label">
                 <span className="addbook__form_content">Book Title</span>
@@ -83,11 +138,10 @@ export default class AddBookForm extends React.Component {
               <input
                 className="addbook__form_input"
                 type="text"
-                name="author"
                 required
                 autoComplete="off"
                 value={this.state.author}
-                onChange={this.handleAddBookFormChange}
+                onChange={this.onAuthorChange}
               />
               <label htmlFor="title" className="addbook__form_label">
                 <span className="addbook__form_content">Author</span>
@@ -99,10 +153,9 @@ export default class AddBookForm extends React.Component {
               <input
                 className="addbook__form_input"
                 type="number"
-                name="publicationYear"
                 required
                 value={this.state.publicationYear}
-                onChange={this.handleAddBookFormChange}
+                onChange={this.onPublicationYearChange}
               />
               <label htmlFor="title" className="addbook__form_label">
                 <span className="addbook__form_content">Publication Year</span>
@@ -112,10 +165,9 @@ export default class AddBookForm extends React.Component {
               <input
                 className="addbook__form_input"
                 type="number"
-                name="publicationLength"
                 required
                 value={this.state.publicationLength}
-                onChange={this.handleAddBookFormChange}
+                onChange={this.onPublicationLengthChange}
               />
               <label htmlFor="title" className="addbook__form_label">
                 <span className="addbook__form_content">
@@ -130,10 +182,9 @@ export default class AddBookForm extends React.Component {
               <input
                 className="addbook__form_input"
                 type="text"
-                name="publisher"
                 required
                 value={this.state.publisher}
-                onChange={this.handleAddBookFormChange}
+                onChange={this.onPublisherChange}
               />
               <label htmlFor="title" className="addbook__form_label">
                 <span className="addbook__form_content">Publisher</span>
@@ -143,13 +194,12 @@ export default class AddBookForm extends React.Component {
               <input
                 className="addbook__form_input"
                 type="url"
-                name="url"
                 title="URL should match the pattern: https://.*"
                 required
                 pattern="https://.*"
                 autoComplete="off"
                 value={this.state.url}
-                onChange={this.handleAddBookFormChange}
+                onChange={this.onUrlChange}
               />
               <label htmlFor="url" className="addbook__form_label">
                 <span className="addbook__form_content">Link to the Book</span>
@@ -162,10 +212,9 @@ export default class AddBookForm extends React.Component {
               <input
                 className="addbook__form_input"
                 type="text"
-                name="category"
                 required
                 value={this.state.category}
-                onChange={this.handleAddBookFormChange}
+                onChange={this.onCategoryChange}
               />
               <label htmlFor="title" className="addbook__form_label">
                 <span className="addbook__form_content">Category</span>
@@ -178,10 +227,9 @@ export default class AddBookForm extends React.Component {
                 type="number"
                 min="1"
                 max="10"
-                name="rating"
                 required
                 value={this.state.rating}
-                onChange={this.handleAddBookFormChange}
+                onChange={this.onRatingChange}
               />
               <label htmlFor="title" className="addbook__form_label">
                 <span className="addbook__form_content">Rating</span>
@@ -193,12 +241,11 @@ export default class AddBookForm extends React.Component {
               <input
                 className="addbook__form_input"
                 type="url"
-                name="src"
                 title="URL should match the pattern: https://.*"
                 required
                 autoComplete="on"
-                value={this.state.src}
-                onChange={this.handleAddBookFormChange}
+                value={this.state.imgLink}
+                onChange={this.onImgLinkChange}
               />
               <label htmlFor="url" className="addbook__form_label">
                 <span className="addbook__form_content">Image Link</span>
@@ -210,11 +257,10 @@ export default class AddBookForm extends React.Component {
               <textarea
                 className="addbook__form_textarea"
                 type="text"
-                name="description"
                 required
                 maxLength="3000"
                 value={this.state.description}
-                onChange={this.handleAddBookFormChange}
+                onChange={this.onDescriptionChange}
               />
               <label htmlFor="title" className="addbook__form_label-textarea">
                 <span className="addbook__form_content-textarea">
@@ -239,3 +285,5 @@ export default class AddBookForm extends React.Component {
     );
   }
 }
+
+export default AddBookForm;

@@ -1,17 +1,16 @@
 /* ============= Settings ============== */
-
 /* Variables */
 $white: #ffffff;
 $lightGrey: rgb(237, 237, 237);
 $black: #000;
+$red: #FF0000;
 $peach: rgb(255, 152, 0);
 $peachBrighter: rgb(229, 165, 0);
 $salad: #00cc33;
 $crimson: #dc143c;
-
 /* Fonts */
-$nunito: "Nunito", sans-serif;
-
+$nunito: "Nunito",
+sans-serif;
 /* Box Sizes */
 $xs-box-size: pxToRem(5);
 $s-box-size: pxToRem(10);
@@ -19,7 +18,6 @@ $m-box-size: pxToRem(15);
 $l-box-size: pxToRem(25);
 $xl-box-size: pxToRem(40);
 $xxl-box-size: pxToRem(50);
-
 /* Text Sizes */
 $xs-text-size: pxToRem(14);
 $s-text-size: pxToRem(16);

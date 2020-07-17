@@ -35,22 +35,7 @@ export default class PersonalDigitalLibraryApp extends Component {
   updateSearch(e) {
     this.setState({ search: e.target.value });
   }
-  addNewBookDetails = (book) => {
-    let tempBook = this.state.library;
-    book.id = this.state.lastIndex;
-    tempBook.unshift(book);
-    this.setState(() => ({
-      library: tempBook,
-      lastIndex: this.state.lastIndex + 1,
-    }));
-  };
-  deleteBook = (book) => {
-    let tempBook = this.state.library;
-    tempBook = without(tempBook, book);
-    this.setState(() => ({
-      library: tempBook,
-    }));
-  };
+
   editBookInfo = (name, value, id) => {
     let tempBook = this.state.library;
     let bookIndex = findIndex(this.state.library, { id: id });
@@ -99,7 +84,7 @@ export default class PersonalDigitalLibraryApp extends Component {
     return (
       <div className="container">
         <Header />
-        <main className="main__content">
+        <main className="main-content">
           <SearchBlock
             search={this.state.search}
             updateSearch={this.updateSearch.bind(this)}
@@ -111,10 +96,8 @@ export default class PersonalDigitalLibraryApp extends Component {
           <SearchResult
             library={this.state.library}
             filteredLibrary={filteredLibrary}
-            deleteBook={this.deleteBook.bind(this)}
-            editBookInfo={this.editBookInfo.bind(this)}
           />
-          <AddBook addNewBookDetails={this.addNewBookDetails} />
+          <AddBook />
         </main>
         <Footer />
       </div>
