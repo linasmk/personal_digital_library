@@ -36,14 +36,6 @@ export default class PersonalDigitalLibraryApp extends Component {
     this.setState({ search: e.target.value });
   }
 
-  editBookInfo = (name, value, id) => {
-    let tempBook = this.state.library;
-    let bookIndex = findIndex(this.state.library, { id: id });
-    tempBook[bookIndex][name] = value;
-    this.setState(() => ({
-      library: tempBook,
-    }));
-  };
   render() {
     let order;
     let filteredLibrary = this.state.library;
@@ -94,6 +86,7 @@ export default class PersonalDigitalLibraryApp extends Component {
             searchForBooks={this.searchForBooks.bind(this)}
           />
           <SearchResult
+            editBookInfo={this.editBookInfo}
             library={this.state.library}
             filteredLibrary={filteredLibrary}
           />

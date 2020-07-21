@@ -1,5 +1,6 @@
 /* =============== Dependencies ============= */
 import React, { useState } from "react";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 /* ========== Redux ============= */
 import { connect } from "react-redux";
@@ -20,17 +21,16 @@ const SearchResult = (props) => {
   return (
     <div className="search__result">
       {props.books.map((book) => (
-        <div key={book.id.toString()} className="card__container">
+        <div key={book.id} className="card__container">
           <article className="card">
-            <button
-              className="card__button-top"
-              onClick={(e) => {
-                props.dispatch(removeBook({ id: book.id }));
-              }}
-            >
-              <span>&times;</span>
-            </button>
-            <section className="card__main_block">
+            <div className="top-bar h-top-bar-search-results">
+              <FaRegTrashAlt
+                className="card__btn-trash h-icon-styles"
+                onClick={(e) => props.dispatch(removeBook({ id: book.id }))}
+              />
+            </div>
+
+            <section className="card__main-block">
               <a className="card__book_link" href={book.url} target="_blank">
                 <BookPicture
                   src={book.src}
@@ -64,8 +64,6 @@ const SearchResult = (props) => {
             // Modal handlers
             clearViewBookModal={clearViewBookModal}
             viewBookModal={viewBookModalId === book.id}
-            // Book edits
-            editBookInfo={props.editBookInfo}
           />
         </div>
       ))}

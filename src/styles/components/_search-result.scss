@@ -1,10 +1,12 @@
 /* ============= Search Result ============== */
 .search__result {
-  margin: $l-box-size 0;
+  margin: $l-box-size $m-box-size;
 }
+
 .card__container {
   width: 100%;
 }
+
 .card {
   width: 100%;
   position: relative;
@@ -14,44 +16,39 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  padding: pxToRem(25);
   transition: border 0.5s ease;
-  border-radius: pxToRem(5);
+  border-radius: pxToRem(15) pxToRem(15) pxToRem(5) pxToRem(5);
   box-shadow: inset 0 1px 25px rgba(0, 64, 143, 0.2),
     1px 12px 3px rgba(03, 28, 29, 0.9);
   transition: box-shadow 0.3s ease-in-out;
+
   &:hover {
     box-shadow: inset 0 1px 5px rgba(0, 64, 143, 0.2),
       1px 12px 3px rgba(03, 28, 29, 0.9);
   }
 }
-.card__button-top {
-  @include horizontalFlex(center, center);
-  width: pxToRem(35);
-  height: pxToRem(35);
-  font-size: $l-text-size;
-  position: absolute;
-  background: transparent;
-  color: $peach;
-  top: 0;
-  right: 0;
-  border: none;
-  visibility: hidden;
-  &:focus {
-    border: none;
-    outline: none;
-  }
+
+.top-bar {
+  width: 100%;
+  height: auto;
+  @include horizontalFlex(flex-end, center);
+  padding: $m-box-size;
 }
-.card:hover .card__button-top {
-  visibility: visible;
-}
+
+.card__btn-edit {}
+
+.card__btn-trash {}
+
+.card__btn-close {}
+
 /**** Card Main Block ****/
-.card__main_block {
+.card__main-block {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   grid-template-rows: auto auto auto auto;
+  padding: $m-box-size $l-box-size;
 }
+
 .card__book_title {
   grid-column: 2;
   grid-row: 1;
@@ -61,6 +58,7 @@
   margin: $l-box-size 0;
   font-size: $s-text-size;
 }
+
 .card__book_author {
   grid-column: 1 / span 2;
   grid-row: 2;
@@ -69,9 +67,11 @@
   font-size: $xs-text-size;
   font-weight: 900;
 }
+
 .card__book_author span {
   color: $peach;
 }
+
 .card__book_link {
   grid-column: 1;
   grid-row: 1;
@@ -79,10 +79,12 @@
   width: 100%;
   margin: 0 $m-box-size $s-box-size 0;
 }
+
 .book__picture {
   box-shadow: 5px 5px 15px $black;
   width: 95%;
 }
+
 .book__stars {
   width: 100%;
   grid-column: 1 / span 2;
@@ -94,11 +96,13 @@
   justify-content: space-between;
   margin: $m-box-size 0;
 }
+
 .view__more_box {
   grid-column: 1 / span 2;
   grid-row: 4;
   @include horizontalFlex(center, center);
 }
+
 .view__more_btn {
   font-size: $xs-text-size;
   margin: $l-box-size 0;
@@ -113,101 +117,130 @@
     grid-column: 2;
     grid-row: 2;
   }
+
   .card__book_link {
     grid-column: 1;
     grid-row: 1 / span 2;
   }
 }
+
 @media (min-width: pxToRem(480)) {
   .card__book_title {
     font-size: $m-text-size;
   }
+
   .card__book_author {
     font-size: pxToRem(18);
   }
+
   .card__book_link {
     grid-column: 1;
     grid-row: 1 / span 2;
     margin: 0 $l-box-size $s-box-size 0;
   }
 }
+
 @media screen and (min-width: pxToRem(520)) {
   .card__book_link {
     grid-row: 1 / span 3;
   }
+
   .book__stars {
     grid-column: 2;
   }
 }
+
 @media screen and (min-width: pxToRem(600)) {
   .card__book_title {
     font-size: pxToRem(24);
   }
+
   .card__book_author {
     font-size: $m-text-size;
   }
 }
+
 @media screen and (min-width: pxToRem(768)) {
   .search__result {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
+
   .card__container {
     box-sizing: border-box;
     width: calc(50% - 1.875rem);
     margin: $l-box-size $m-box-size;
   }
-  .card__main_block {
+
+  .card__main-block {
     height: 100%;
   }
+
   .card__book_title {
     font-size: $s-text-size;
     margin: $s-box-size;
   }
+
   .card__book_author {
     font-size: $xs-text-size;
   }
+
   .card__book_link {
     grid-row: 1 / span 2;
   }
+
   .book__stars {
     grid-column: 1 / span 2;
     grid-row: 3;
   }
+
   .view__more_box {
     align-self: stretch;
   }
 }
+
 @media screen and (min-width: pxToRem(998)) {
+  .search__result {
+    margin: $l-box-size $xxl-box-size;
+  }
+
   .card-container {
     width: calc(50% - 3.125rem);
     margin: pxToRem(15) pxToRem(25);
   }
-  .card__main_block {
+
+  .card__main-block {
     grid-template-columns: 1fr 2fr;
   }
+
   .card__book_title {
     font-size: $m-text-size;
   }
+
   .card__book_author {
     font-size: $s-text-size;
   }
 }
+
 @media screen and (min-width: pxToRem(1400)) {
-  .card__main_block {
+  .card__main-block {
     grid-template-columns: 1fr 3fr;
     grid-template-rows: pxToRem(100) pxToRem(45) pxToRem(60) auto;
   }
+
   .card__book_author {
     align-self: center;
   }
+
   .card__book_link {
     grid-row: 1 / span 4;
   }
+
   .book__stars {
     grid-column: 2;
   }
+
   .view__more_box {
     grid-column: 2;
   }

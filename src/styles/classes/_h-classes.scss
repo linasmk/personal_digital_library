@@ -1,0 +1,22 @@
+.h-icon-styles {
+	@include verticalFlex(center, center);
+	font-size: $l-text-size;
+	color: $peach;
+	transition: all .3s ease-in;
+	margin: 0 $xs-box-size;
+
+	&:hover {
+		color: lighten($peach, 15%);
+		cursor: pointer;
+	}
+}
+
+.h-top-bar-search-results {
+	background-color: $salad;
+	border-radius: pxToRem(18) pxToRem(18) pxToRem(0) pxToRem(0);
+}
+
+.h-top-bar-modal {
+	background-color: $salad;
+	border-radius: none;
+}
