@@ -1,34 +1,63 @@
+
+/* ========== Dependencies ============ */
 import React from "react";
 import { FaCaretDown } from "react-icons/fa";
-export default class SearchBlock extends React.Component {
+
+/* ========== Redux ============= */
+import { connect } from "react-redux";
+import {
+  setTextFilter,
+  sortBySearchType,
+  sortByDirection,
+} from "../store/actionCreators";
+
+class SearchBlock extends React.Component {
   state = {
     setActiveState: false,
+    sortBy: "title",
+    sortDirection: "ascending",
   };
   toggleAccordion = (e) => {
-    if (e.target) {
-      this.setState(() => ({
-        setActiveState: !this.state.setActiveState,
-      }));
-    }
+    this.setState(() => ({
+      setActiveState: !this.state.setActiveState,
+    }));
   };
+  changeSearchSettings = (sortBy, sortDirection) => {
+    this.setState({
+      sortBy: sortBy,
+      sortDirection: sortDirection,
+    });
+    this.handleSortBySearchType(sortBy, sortDirection);
+  };
+  handleSortBySearchType = (searchType, sortDirection) => {
+    this.setState(() => {
+      this.props.dispatch(sortBySearchType(searchType));
+      this.props.dispatch(sortByDirection(sortDirection));
+    });
+  };
+
   render() {
     return (
-      <section className="search__block">
+      <section className="search-block">
         <div className="search__query">
           <input
             className="search__query-input"
             type="text"
             placeholder="Search for books"
-            //value={this.props.search}
-            onChange={(e) => this.props.searchForBooks(e.target.value)}
+            value={this.props.filters.text}
+            onChange={(e) => {
+              this.props.dispatch(setTextFilter(e.target.value));
+            }}
           />
           <nav className="search__query-dropdown">
             <button
-              className="search__query-dropdown--toggle"
-              data-back={this.props.orderBy}
-              data-front="Sort by"
-              onClick={this.toggleAccordion.bind(this)}
-            ></button>
+              className="search-block__btn"
+              data-back={this.state.sortBy.toUpperCase()}
+              data-front="SORT BY:"
+              onClick={this.toggleAccordion}
+            >
+              <FaCaretDown className="search-block__caret-down" />
+            </button>
             <ul
               className={
                 "search__query-dropdown--slider" +
@@ -41,13 +70,13 @@ export default class SearchBlock extends React.Component {
                   className={
                     "search__query-dropdown--btn" +
                     " " +
-                    (this.props.orderBy === "title"
+                    (this.state.sortBy === "title"
                       ? "active-dropdown--item"
                       : "")
                   }
                   href="#"
                   onClick={(e) =>
-                    this.props.changeSearchOrder("title", this.props.orderDir)
+                    this.changeSearchSettings("title", this.state.sortDirection)
                   }
                 >
                   Title
@@ -59,58 +88,19 @@ export default class SearchBlock extends React.Component {
                   className={
                     "search__query-dropdown--btn" +
                     " " +
-                    (this.props.orderBy === "author"
+                    (this.state.sortBy === "author"
                       ? "active-dropdown--item"
                       : "")
                   }
                   href="#"
                   onClick={(e) =>
-                    this.props.changeSearchOrder("author", this.props.orderDir)
+                    this.changeSearchSettings(
+                      "author",
+                      this.state.sortDirection
+                    )
                   }
                 >
                   Author
-                </a>
-              </li>
-
-              <li className="search__query-dropdown--item">
-                <a
-                  className={
-                    "search__query-dropdown--btn" +
-                    " " +
-                    (this.props.orderBy === "category"
-                      ? "active-dropdown--item"
-                      : "")
-                  }
-                  href="#"
-                  onClick={(e) =>
-                    this.props.changeSearchOrder(
-                      "category",
-                      this.props.orderDir
-                    )
-                  }
-                >
-                  Category
-                </a>
-              </li>
-
-              <li className="search__query-dropdown--item">
-                <a
-                  className={
-                    "search__query-dropdown--btn" +
-                    " " +
-                    (this.props.orderBy === "publicationYear"
-                      ? "active-dropdown--item"
-                      : "")
-                  }
-                  href="#"
-                  onClick={(e) =>
-                    this.props.changeSearchOrder(
-                      "publicationYear",
-                      this.props.orderDir
-                    )
-                  }
-                >
-                  Year
                 </a>
               </li>
 
@@ -120,12 +110,12 @@ export default class SearchBlock extends React.Component {
                   className={
                     "search__query-dropdown--btn" +
                     " " +
-                    (this.props.orderDir === "asc"
+                    (this.state.sortDirection === "ascending"
                       ? "active-dropdown--item"
                       : "")
                   }
                   onClick={(e) =>
-                    this.props.changeSearchOrder(this.props.orderBy, "asc")
+                    this.changeSearchSettings(this.state.sortBy, "ascending")
                   }
                   href="#"
                 >
@@ -138,12 +128,12 @@ export default class SearchBlock extends React.Component {
                   className={
                     "search__query-dropdown--btn" +
                     " " +
-                    (this.props.orderDir === "desc"
+                    (this.state.sortDirection === "descending"
                       ? "active-dropdown--item"
                       : "")
                   }
                   onClick={(e) =>
-                    this.props.changeSearchOrder(this.props.orderBy, "desc")
+                    this.changeSearchSettings(this.state.sortBy, "descending")
                   }
                   href="#"
                 >
@@ -157,3 +147,11 @@ export default class SearchBlock extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    filters: state.filters,
+  };
+};
+
+export default connect(mapStateToProps)(SearchBlock);

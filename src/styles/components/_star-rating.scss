@@ -1,18 +1,73 @@
 /* ============= Star Rating ============== */
-.book__stars li {
-  width: 9%;
+.star-rating__ul {
+	width: 85%;
+	@include ulStyle;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
+
+.star-rating__ul--modal {
+	width: 85%;
+	@include ulStyle;
+	margin: pxToRem(15) auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.star-rating li {
+	width: 9%;
+}
+
 .star {
-  width: 100%;
-  fill: lighten($peach, 50%);
+	width: 100%;
+	fill: lighten($peach, 50%);
 }
+
 .selected .star {
-  fill: $peach;
+	fill: $peach;
+}
+
+/* ============= Star Rating for Modal ============== */
+.star-rating li {
+	width: 9%;
+}
+
+.star--modal {
+	padding: 0 pxToRem(2);
+	width: 100%;
+	fill: lighten($peach, 50%);
+}
+
+.selected .star--modal {
+	fill: $peach;
 }
 
 /* ============= Media Queries ============== */
 @media screen and (min-width: pxToRem(520)) {
-  .book__stars li {
-    width: 8%;
-  }
+	.star-rating li {
+		width: 8%;
+	}
+}
+
+@media screen and (min-width: pxToRem(600)) {
+	.star-rating li {
+		width: 7%;
+	}
+}
+
+@media screen and (min-width: pxToRem(768)) {
+	.star-rating__ul--modal {
+		width: 75%;
+		margin: pxToRem(25) auto;
+	}
+}
+
+@media screen and (min-width: pxToRem(1024)) {
+	.star-rating__ul--modal {
+		width: 65%;
+		margin: pxToRem(45) auto;
+	}
 }

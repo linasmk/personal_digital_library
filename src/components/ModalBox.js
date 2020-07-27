@@ -8,7 +8,8 @@ import { editBook } from "../store/actionCreators";
 /* ========== Components ============ */
 import BookPicture from "./BookPicture";
 import Modal from "react-modal";
-import StarRatingModal from "./StarRating_Modal";
+import StarRating from "./StarRating";
+import { method } from "lodash";
 
 /* ========== Code ============ */
 Modal.setAppElement("#app");
@@ -25,6 +26,7 @@ class ModalBox extends React.Component {
       publisher: props.book ? props.book.publisher : "",
       publicationLength: props.book ? props.book.publicationLength : "",
       category: props.book ? props.book.category : "",
+      rating: props.book ? props.book.rating : "",
       src: props.book ? props.book.src : "",
       isContentInEditMode: false,
     };
@@ -211,7 +213,16 @@ class ModalBox extends React.Component {
               </tbody>
             </table>
           </div>
-          <StarRatingModal />
+          <StarRating
+            // handleStarRating={this.handleStarRating}
+            bookRating={this.state.rating}
+            bookId={this.state.id}
+            starRatingUl="star-rating__ul--modal"
+            star="star--modal"
+            selected="selected"
+            stroke="rgb(255, 152, 0)"
+            strokeWidth={1}
+          />
         </section>
 
         <div className="modal__button-bottom_wrapper">

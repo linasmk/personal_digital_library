@@ -4,7 +4,7 @@ import AddBook from "../components/AddBook";
 /* ============================================
 =========== Action Creators ================
 ============================================ */
-
+/* ============== Books Actions ================ */
 // ADD_BOOK
 export const addBook = ({
   title = "",
@@ -48,4 +48,21 @@ export const editBook = (id, updates) => ({
   type: "EDIT_BOOK",
   id,
   updates,
+});
+
+/* ============== Filters Actions ================ */
+//SET_TEXT_FILTER
+export const setTextFilter = (text = "") => ({
+  type: "SET_TEXT_FILTER",
+  text,
+});
+//"SORT_BY_SEARCH_TYPE"
+export const sortBySearchType = (searchType = "") => ({
+  type: "SORT_BY_SEARCH_TYPE",
+  searchType,
+});
+//"SORT_BY_DIRECTION"
+export const sortByDirection = (sortDirection = "") => ({
+  type: "SORT_BY_DIRECTION",
+  sortDirection,
 });

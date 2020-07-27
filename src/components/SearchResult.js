@@ -5,7 +5,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 /* ========== Redux ============= */
 import { connect } from "react-redux";
 import getVisibleBooks from "../store/selectors";
-import { removeBook } from "../store/actionCreators";
+import { removeBook, editBook } from "../store/actionCreators";
 
 /* ============== Components ================= */
 import BookPicture from "./BookPicture";
@@ -17,6 +17,28 @@ const SearchResult = (props) => {
   const [viewBookModalId, setBookModallId] = useState(undefined);
   const viewBookModalPopUp = (id) => setBookModallId(id);
   const clearViewBookModal = () => setBookModallId(undefined);
+
+  const [starRating, setStarRating] = useState(0);
+
+  const handleStarRating = (rating, starRating, id) => {
+    if (starRating === rating) {
+      setStarRating(0);
+    } else {
+      setStarRating({ starRating });
+      setStarRating(() => props.dispatch(editBook(id, { starRating })));
+    }
+  };
+
+  // const handleStarRating = (rating) => {
+  //   if (this.state.rating === rating) {
+  //     this.setState({ rating: 0 });
+  //   } else {
+  //     this.setState({ rating });
+  //     this.setState(() =>
+  //       this.props.dispatch(editBook(this.state.id, { rating }))
+  //     );
+  //   }
+  // };
 
   return (
     <div className="search__result">
@@ -46,7 +68,17 @@ const SearchResult = (props) => {
                 <span>by </span>
                 {book.author}
               </h3>
-              <StarRating />
+              <StarRating
+                // handleStarRating={handleStarRating}
+                bookRating={book.rating}
+                bookId={book.id}
+                // Star props
+                starRatingUl="star-rating__ul"
+                star="star"
+                selected="selected"
+                stroke={undefined}
+                strokeWidth={0}
+              />
               <div className="view__more_box">
                 <button
                   className="view__more_btn"
@@ -60,6 +92,7 @@ const SearchResult = (props) => {
           <ModalBox
             //Book info
             key={book.id}
+            handleStarRatin={handleStarRating}
             {...book}
             // Modal handlers
             clearViewBookModal={clearViewBookModal}
@@ -73,7 +106,7 @@ const SearchResult = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    books: getVisibleBooks(state.books),
+    books: getVisibleBooks(state.books, state.filters),
   };
 };
 export default connect(mapStateToProps)(SearchResult);

@@ -130,5 +130,57 @@ const library = [
     imgLink:
       "https://images-na.ssl-images-amazon.com/images/I/517FwF49v+L._SX322_BO1,204,203,200_.jpg",
   },
+  {
+    id: "615542",
+    title: "Secrets of Creativity: What Neuroscience, the Arts, and Our Minds",
+    author: "Suzanne Nalbantian & Paul M. Matthews",
+    description:
+      "Secrets of Creativity: What Neuroscience, the Arts, and Our Minds Reveal draws on insights from leading neuroscientists and scholars in the humanities and the arts to probe creativity in its many contexts, in the everyday mind, the exceptional mind, the scientific mind, the artistic mind, and the pathological mind. Components of creativity are specified with respect to types of memory, forms of intelligence, modes of experience, and kinds of emotion. Authors in this volume take on the challenge of showing how creativity can be characterized behaviorally, cognitively, and neurophysiologically. The complementary perspectives of the authors add to the richness of these findings. Neuroscientists describe the functioning of the brain and its circuitry in creative acts of scientific discovery or aesthetic production. Humanists from the fields of literature, art, and music give analyses of creativity in major literary works, musical compositions, and works of visual art.",
+    publicationYear: "2019",
+    publisher: "OXFORD UNIV",
+    publicationLength: 456,
+    category: "Neuroscience",
+    url:
+      "https://www.amazon.de/Suzanne-Nalbantian/dp/0190462329/ref=sr_1_42?dchild=1&keywords=neuroscience&qid=1595685534&sr=8-42",
+    rating: 6,
+    src:
+      "https://images-na.ssl-images-amazon.com/images/I/51JafNpyOVL._SX329_BO1,204,203,200_.jpg",
+    srcSm:
+      "https://images-na.ssl-images-amazon.com/images/I/51JafNpyOVL._SX329_BO1,204,203,200_.jpg",
+    srcMd:
+      "https://images-na.ssl-images-amazon.com/images/I/51JafNpyOVL._SX329_BO1,204,203,200_.jpg",
+    srcLg:
+      "https://images-na.ssl-images-amazon.com/images/I/51JafNpyOVL._SX329_BO1,204,203,200_.jpg",
+    srcXlg:
+      "https://images-na.ssl-images-amazon.com/images/I/51JafNpyOVL._SX329_BO1,204,203,200_.jpg",
+    imgLink:
+      "https://images-na.ssl-images-amazon.com/images/I/51JafNpyOVL._SX329_BO1,204,203,200_.jpg",
+  },
+  {
+    id: "655232",
+    title: "Incognito: The Secret Lives of the Brain",
+    author: "David Eagleman",
+    description:
+      "A NEW YORK TIMES BESTSELLER *Why does your foot hit the brake pedal before you are conscious of danger ahead?* *Why is it so difficult to keep a secret?* *How is it possible to get angry at yourself: who, exactly, is mad at whom?* In this sparkling and provocative book, renowned neuroscientist David Eagleman navigates the depths of the subconscious brain. Taking in brain damage, plane spotting, dating, drugs, beauty, infidelity, synaesthesia, criminal law, artificial intelligence and visual illusions, INCOGNITO is a thrilling subsurface exploration of the mind and all its contradictions.",
+    publicationYear: "2011",
+    publisher: "Canongate Books Ltd",
+    publicationLength: 290,
+    category: "Popular Neuroscience",
+    url:
+      "https://www.amazon.de/Incognito-INCOGNITO-Eagleman-May-31-2011-Hardcover/dp/B007NBBIJQ/ref=sr_1_2?crid=191HTBVOWYAAX&dchild=1&keywords=incognito+the+secret+lives+of+the+brain&qid=1595686037&sprefix=incognito%2Caps%2C212&sr=8-2",
+    rating: 8,
+    src:
+      "https://images-na.ssl-images-amazon.com/images/I/41TprMMlnrL._SX327_BO1,204,203,200_.jpg",
+    srcSm:
+      "https://images-na.ssl-images-amazon.com/images/I/41TprMMlnrL._SX327_BO1,204,203,200_.jpg",
+    srcMd:
+      "https://images-na.ssl-images-amazon.com/images/I/41TprMMlnrL._SX327_BO1,204,203,200_.jpg",
+    srcLg:
+      "https://images-na.ssl-images-amazon.com/images/I/41TprMMlnrL._SX327_BO1,204,203,200_.jpg",
+    srcXlg:
+      "https://images-na.ssl-images-amazon.com/images/I/41TprMMlnrL._SX327_BO1,204,203,200_.jpg",
+    imgLink:
+      "https://images-na.ssl-images-amazon.com/images/I/41TprMMlnrL._SX327_BO1,204,203,200_.jpg",
+  },
 ];
 export default library;

@@ -31,6 +31,7 @@
 .top-bar {
   width: 100%;
   height: auto;
+  position: relative;
   @include horizontalFlex(flex-end, center);
   padding: $m-box-size;
 }
@@ -85,15 +86,10 @@
   width: 95%;
 }
 
-.book__stars {
+.star-rating {
   width: 100%;
   grid-column: 1 / span 2;
   grid-row: 3;
-  align-self: center;
-  @include ulStyle;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   margin: $m-box-size 0;
 }
 
@@ -145,7 +141,7 @@
     grid-row: 1 / span 3;
   }
 
-  .book__stars {
+  .star-rating {
     grid-column: 2;
   }
 }
@@ -190,7 +186,7 @@
     grid-row: 1 / span 2;
   }
 
-  .book__stars {
+  .star-rating {
     grid-column: 1 / span 2;
     grid-row: 3;
   }
@@ -237,7 +233,7 @@
     grid-row: 1 / span 4;
   }
 
-  .book__stars {
+  .star-rating {
     grid-column: 2;
   }
 
