@@ -1,12 +1,12 @@
 /* ============ Dependencies ============= */
 import React from "react";
 import Modal from "react-modal";
-Modal.setAppElement("#app");
 
 /* ============== Redux =============== */
 
 /* ============ Components ============== */
 /* =============== Code ================= */
+//Modal.setAppElement("#app");
 class AddBookForm extends React.Component {
   state = {
     title: this.props.book ? this.props.book.title : "",
@@ -114,6 +114,7 @@ class AddBookForm extends React.Component {
         contentLabel={"Add New Book"}
         closeTimeoutMS={800}
         className="modal"
+        ariaHideApp={false}
       >
         <h2 className="add__book_hading">Add New Book</h2>
         <form className="addbook__form" onSubmit={this.onSubmit}>

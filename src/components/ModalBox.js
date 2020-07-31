@@ -12,7 +12,7 @@ import StarRating from "./StarRating";
 import { method } from "lodash";
 
 /* ========== Code ============ */
-Modal.setAppElement("#app");
+//Modal.setAppElement("#app");
 
 class ModalBox extends React.Component {
   constructor(props) {
@@ -95,6 +95,7 @@ class ModalBox extends React.Component {
         closeTimeoutMS={800}
         className="modal"
         key={this.state.id}
+        ariaHideApp={false}
       >
         <div className="top-bar h-top-bar-modal">
           {this.state.isContentInEditMode ? (

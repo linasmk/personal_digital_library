@@ -5,8 +5,8 @@
 ================================================= */
 const filtersReducerDefaultState = {
   text: "",
-  sortBySearchType: "",
-  sortDirection: "",
+  searchType: "title",
+  sortDirection: "ascending",
 };
 export default (state = filtersReducerDefaultState, action) => {
   switch (action.type) {
