@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Header correctly 1`] = `
+<header>
+  <h1
+    className="main-heading"
+  >
+    Personal Digital Library
+  </h1>
+  <h2 />
+</header>
+`;

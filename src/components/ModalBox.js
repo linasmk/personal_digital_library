@@ -14,7 +14,7 @@ import { method } from "lodash";
 /* ========== Code ============ */
 //Modal.setAppElement("#app");
 
-class ModalBox extends React.Component {
+export class ModalBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

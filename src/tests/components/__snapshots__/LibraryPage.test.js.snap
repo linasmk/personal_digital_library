@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should LibraryPage render corectly 1`] = `
+<div
+  className="container"
+>
+  <Header
+    title="Personal Digital Library"
+  />
+  <main
+    className="main-content"
+  >
+    <Connect(SearchBlock) />
+    <Connect(SearchResult) />
+    <Connect(AddBook) />
+  </main>
+  <Footer />
+</div>
+`;

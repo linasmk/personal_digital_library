@@ -1,6 +1,6 @@
 import booksReducer from "../../store/booksReducer";
 import library from "../../data/library";
-import books from "./fixtures/books";
+import books from "../fixtures/books";
 
 test("Should set default state", () => {
   const state = booksReducer(library, { type: "@@INIT" });

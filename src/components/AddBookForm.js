@@ -45,18 +45,21 @@ class AddBookForm extends React.Component {
       publicationYear,
     }));
   };
-  onPublisherChange = (e) => {
-    const publisher = e.target.value;
-    this.setState(() => ({
-      publisher,
-    }));
-  };
+
   onPublicationLengthChange = (e) => {
     const publicationLength = e.target.value;
     this.setState(() => ({
       publicationLength,
     }));
   };
+
+  onPublisherChange = (e) => {
+    const publisher = e.target.value;
+    this.setState(() => ({
+      publisher,
+    }));
+  };
+
   onCategoryChange = (e) => {
     const category = e.target.value;
     this.setState(() => ({

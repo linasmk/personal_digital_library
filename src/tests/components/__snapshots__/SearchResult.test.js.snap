@@ -1,0 +1,216 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render SearchResult with empty message 1`] = `
+<div
+  className="search__result"
+>
+  <h3>
+    You currently do not have any books!
+  </h3>
+</div>
+`;
+
+exports[`Should render books list with books 1`] = `
+<div
+  className="search__result"
+>
+  <div
+    className="card__container"
+    key="1"
+  >
+    <article
+      className="card"
+    >
+      <div
+        className="top-bar h-top-bar-search-results"
+      >
+        <FaRegTrashAlt
+          className="card__btn-trash h-icon-styles"
+          onClick={[Function]}
+        />
+      </div>
+      <section
+        className="card__main-block"
+      >
+        <a
+          className="card__book_link"
+          target="_blank"
+        >
+          <BookPicture />
+        </a>
+        <h2
+          className="card__book_title"
+        >
+          Why Zebras Dont't Get Ulcers
+        </h2>
+        <h3
+          className="card__book_author"
+        >
+          <span>
+            by 
+          </span>
+          Robert Sapolski
+        </h3>
+        <Connect(StarRating)
+          bookId="1"
+          selected="selected"
+          star="star"
+          starRatingUl="star-rating__ul"
+          strokeWidth={0}
+        />
+        <div
+          className="view__more_box"
+        >
+          <button
+            className="view__more_btn"
+            onClick={[Function]}
+          >
+            View More
+          </button>
+        </div>
+      </section>
+    </article>
+    <Connect(ModalBox)
+      author="Robert Sapolski"
+      clearViewBookModal={[Function]}
+      handleStarRatin={[Function]}
+      id="1"
+      key="1"
+      title="Why Zebras Dont't Get Ulcers"
+      viewBookModal={false}
+    />
+  </div>
+  <div
+    className="card__container"
+    key="2"
+  >
+    <article
+      className="card"
+    >
+      <div
+        className="top-bar h-top-bar-search-results"
+      >
+        <FaRegTrashAlt
+          className="card__btn-trash h-icon-styles"
+          onClick={[Function]}
+        />
+      </div>
+      <section
+        className="card__main-block"
+      >
+        <a
+          className="card__book_link"
+          target="_blank"
+        >
+          <BookPicture />
+        </a>
+        <h2
+          className="card__book_title"
+        >
+          Incognito: The Secret Lives of the Brain
+        </h2>
+        <h3
+          className="card__book_author"
+        >
+          <span>
+            by 
+          </span>
+          David Eagleman
+        </h3>
+        <Connect(StarRating)
+          bookId="2"
+          selected="selected"
+          star="star"
+          starRatingUl="star-rating__ul"
+          strokeWidth={0}
+        />
+        <div
+          className="view__more_box"
+        >
+          <button
+            className="view__more_btn"
+            onClick={[Function]}
+          >
+            View More
+          </button>
+        </div>
+      </section>
+    </article>
+    <Connect(ModalBox)
+      author="David Eagleman"
+      clearViewBookModal={[Function]}
+      handleStarRatin={[Function]}
+      id="2"
+      key="2"
+      title="Incognito: The Secret Lives of the Brain"
+      viewBookModal={false}
+    />
+  </div>
+  <div
+    className="card__container"
+    key="3"
+  >
+    <article
+      className="card"
+    >
+      <div
+        className="top-bar h-top-bar-search-results"
+      >
+        <FaRegTrashAlt
+          className="card__btn-trash h-icon-styles"
+          onClick={[Function]}
+        />
+      </div>
+      <section
+        className="card__main-block"
+      >
+        <a
+          className="card__book_link"
+          target="_blank"
+        >
+          <BookPicture />
+        </a>
+        <h2
+          className="card__book_title"
+        >
+          Thinking, Fast and Slow
+        </h2>
+        <h3
+          className="card__book_author"
+        >
+          <span>
+            by 
+          </span>
+          Daniel Kahneman
+        </h3>
+        <Connect(StarRating)
+          bookId="3"
+          selected="selected"
+          star="star"
+          starRatingUl="star-rating__ul"
+          strokeWidth={0}
+        />
+        <div
+          className="view__more_box"
+        >
+          <button
+            className="view__more_btn"
+            onClick={[Function]}
+          >
+            View More
+          </button>
+        </div>
+      </section>
+    </article>
+    <Connect(ModalBox)
+      author="Daniel Kahneman"
+      clearViewBookModal={[Function]}
+      handleStarRatin={[Function]}
+      id="3"
+      key="3"
+      title="Thinking, Fast and Slow"
+      viewBookModal={false}
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render ModalBox correctly 1`] = `
+<Modal
+  ariaHideApp={false}
+  bodyOpenClassName="ReactModal__Body--open"
+  className="modal"
+  closeTimeoutMS={800}
+  contentLabel="Why Zebras Dont't Get Ulcers"
+  isOpen={false}
+  key=""
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+>
+  <div
+    className="top-bar h-top-bar-modal"
+  >
+    <FiEdit
+      className="card__btn-edit h-icon-styles"
+      onClick={[Function]}
+    />
+    <AiOutlineClose
+      className="card__btn-close h-icon-styles"
+      viewBox="100 50 800 880"
+    />
+  </div>
+  <h2
+    className="modal__title"
+    contentEditable={false}
+    onBlur={[Function]}
+    suppressContentEditableWarning={true}
+  />
+  <h3
+    className="modal__author"
+  >
+    <span>
+      by 
+    </span>
+    <span
+      contentEditable={false}
+      onBlur={[Function]}
+      suppressContentEditableWarning={true}
+    />
+  </h3>
+  <section
+    className="modal__details_block"
+  >
+    <section
+      className="details__block_description"
+    >
+      <h3
+        className="description__heading"
+      >
+        Description:
+      </h3>
+      <p
+        className="description__p"
+        contentEditable={false}
+        onBlur={[Function]}
+        suppressContentEditableWarning={true}
+      />
+    </section>
+    <a
+      className="details__block_link"
+      target="_blank"
+    >
+      <BookPicture
+        src=""
+      />
+    </a>
+    <div
+      className="details__block_table-wrapper"
+    >
+      <table
+        className="modal__table"
+      >
+        <tbody>
+          <tr>
+            <td>
+              Publication Year
+            </td>
+            <td
+              contentEditable={false}
+              onBlur={[Function]}
+              suppressContentEditableWarning={true}
+            >
+              <strong />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Publisher
+            </td>
+            <td
+              contentEditable={false}
+              onBlur={[Function]}
+              suppressContentEditableWarning={true}
+            >
+              <strong />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Publication Length
+            </td>
+            <td>
+              <strong>
+                <span
+                  contentEditable={false}
+                  onBlur={[Function]}
+                  suppressContentEditableWarning={true}
+                />
+                 pages
+              </strong>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Category
+            </td>
+            <td
+              contentEditable={false}
+              onBlur={[Function]}
+              suppressContentEditableWarning={true}
+            >
+              <strong />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <Connect(StarRating)
+      bookId=""
+      bookRating=""
+      selected="selected"
+      star="star--modal"
+      starRatingUl="star-rating__ul--modal"
+      stroke="rgb(255, 152, 0)"
+      strokeWidth={1}
+    />
+  </section>
+  <div
+    className="modal__button-bottom_wrapper"
+  >
+    <button
+      className="modal__button-bottom"
+    >
+      Okay
+    </button>
+  </div>
+</Modal>
+`;

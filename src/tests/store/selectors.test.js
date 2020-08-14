@@ -1,5 +1,5 @@
 import getVisibleBooks from "../../store/selectors";
-import books from "./fixtures/books";
+import books from "../fixtures/books";
 
 test("Should filter by text value", () => {
   const filters = {
