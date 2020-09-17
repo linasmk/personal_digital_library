@@ -60,18 +60,20 @@ class AddBookForm extends React.Component {
     }));
   };
 
-  onCategoryChange = (e) => {
-    const category = e.target.value;
-    this.setState(() => ({
-      category,
-    }));
-  };
   onUrlChange = (e) => {
     const url = e.target.value;
     this.setState(() => ({
       url,
     }));
   };
+  
+  onCategoryChange = (e) => {
+    const category = e.target.value;
+    this.setState(() => ({
+      category,
+    }));
+  };
+  
   onRatingChange = (e) => {
     const rating = e.target.value;
     this.setState(() => ({

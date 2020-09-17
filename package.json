@@ -7,9 +7,14 @@
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/",
-    "build": "webpack",
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
-    "test": "jest --config=jest.config.json"
+    "test": "jest --config=jest.config.json",
+    "__comment-for-start-command__": "start is needed in order to deploy to Heroku. When it finds this script, it runs node server",
+    "start": "node server/server.js",
+    "_comment-for-heroku-postbuild_": "heroku-postbuild is going to run after Heroku installs all of the depencencies",
+    "heroku-postbuild": "npm run build:prod"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.10.4",
@@ -24,9 +29,11 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.5.0",
+    "express": "^4.17.1",
     "jest": "^26.1.0",
     "live-server": "^1.2.1",
     "lodash": "^4.17.19",
+    "mini-css-extract-plugin": "^0.10.0",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
     "raf": "^3.4.1",

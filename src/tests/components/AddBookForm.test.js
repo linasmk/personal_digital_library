@@ -115,3 +115,32 @@ test("Should set description on textarea change", () => {
   });
   expect(wrapper.state("description")).toBe(value);
 });
+
+test("Should call onSubmit prop for valid form submission", () => {
+  const onSubmitSpy = jest.fn();
+  const clearAddNewBookModalSpy = jest.fn();
+  const wrapper = shallow(
+    <AddBookForm
+      book={books[0]}
+      onSubmit={onSubmitSpy}
+      clearAddNewBookModal={clearAddNewBookModalSpy}
+    />
+  );
+  wrapper.find("form").simulate("submit", {
+    preventDefault: () => {},
+  });
+
+  expect(wrapper.state("error")).toBe("");
+  expect(onSubmitSpy).toHaveBeenLastCalledWith({
+    title: books[0].title,
+    author: books[0].author,
+  });
+  expect(clearAddNewBookModalSpy).toBe("");
+});
+
+// test("Should call onSubmit prop for valid form submission", () => {
+//   const onSubmitSpy = jest.fn();
+//   const clearAddNewBookModalSpy = jest.fn();
+//   onSubmitSpy();
+//   clearAddNewBookModalSpy();
+// });
