@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render AddBook correctly 1`] = `
+<section
+  className="addbook__wraper"
+>
+  <button
+    className="button__addbook"
+    onClick={[Function]}
+  >
+    <FaPlus
+      className="button__addbook_icon"
+    />
+  </button>
+  <AddBookForm
+    clearAddNewBookModal={[Function]}
+    onSubmit={[Function]}
+  />
+</section>
+`;
