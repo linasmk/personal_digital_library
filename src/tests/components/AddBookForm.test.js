@@ -118,12 +118,11 @@ test("Should set description on textarea change", () => {
 
 test("Should call onSubmit prop for valid form submission", () => {
   const onSubmitSpy = jest.fn();
-  const clearAddNewBookModalSpy = jest.fn();
   const wrapper = shallow(
     <AddBookForm
       book={books[0]}
       onSubmit={onSubmitSpy}
-      clearAddNewBookModal={clearAddNewBookModalSpy}
+      clearAddNewBookModal={() => {}}
     />
   );
   wrapper.find("form").simulate("submit", {
@@ -135,12 +134,4 @@ test("Should call onSubmit prop for valid form submission", () => {
     title: books[0].title,
     author: books[0].author,
   });
-  expect(clearAddNewBookModalSpy).toBe("");
 });
-
-// test("Should call onSubmit prop for valid form submission", () => {
-//   const onSubmitSpy = jest.fn();
-//   const clearAddNewBookModalSpy = jest.fn();
-//   onSubmitSpy();
-//   clearAddNewBookModalSpy();
-// });
