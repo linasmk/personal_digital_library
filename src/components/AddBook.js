@@ -9,10 +9,13 @@ import AddBookForm from "./AddBookForm";
 
 /* =============== Code ================= */
 
-class AddBook extends Component {
+export class AddBook extends Component {
   //There cannot be 'this' keyword before props in functional component.
   state = {
     addNewBookModal: undefined,
+  };
+  onSubmit = (book) => {
+    this.props.onSubmit(book);
   };
   handleAddNewBookModalPopUp = () => {
     this.setState(() => ({
@@ -34,9 +37,7 @@ class AddBook extends Component {
           <FaPlus className="button__addbook_icon" />
         </button>
         <AddBookForm
-          onSubmit={(book) => {
-            this.props.dispatch(addBook(book));
-          }}
+          onSubmit={this.onSubmit}
           clearAddNewBookModal={this.clearAddNewBookModal}
           addNewBookModal={this.state.addNewBookModal}
         />
@@ -44,4 +45,9 @@ class AddBook extends Component {
     );
   }
 }
-export default connect()(AddBook);
+
+const mapDispatchToProps = (dispatch) => ({
+  onSubmit: (book) => dispatch(addBook(book)),
+});
+
+export default connect(undefined, mapDispatchToProps)(AddBook);

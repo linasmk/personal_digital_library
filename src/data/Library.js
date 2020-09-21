@@ -132,7 +132,8 @@ const library = [
   },
   {
     id: "615542",
-    title: "Secrets of Creativity: What Neuroscience, the Arts, and Our Minds",
+    title:
+      "Secrets of Creativity: What Neuroscience, the Arts, and Our Minds Reveal",
     author: "Suzanne Nalbantian & Paul M. Matthews",
     description:
       "Secrets of Creativity: What Neuroscience, the Arts, and Our Minds Reveal draws on insights from leading neuroscientists and scholars in the humanities and the arts to probe creativity in its many contexts, in the everyday mind, the exceptional mind, the scientific mind, the artistic mind, and the pathological mind. Components of creativity are specified with respect to types of memory, forms of intelligence, modes of experience, and kinds of emotion. Authors in this volume take on the challenge of showing how creativity can be characterized behaviorally, cognitively, and neurophysiologically. The complementary perspectives of the authors add to the richness of these findings. Neuroscientists describe the functioning of the brain and its circuitry in creative acts of scientific discovery or aesthetic production. Humanists from the fields of literature, art, and music give analyses of creativity in major literary works, musical compositions, and works of visual art.",
