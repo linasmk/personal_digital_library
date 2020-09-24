@@ -30,11 +30,13 @@ class SearchBlock extends React.Component {
   };
   handleSortBySearchType = (searchType, sortDirection) => {
     this.setState(() => {
-      this.props.dispatch(sortBySearchType(searchType));
-      this.props.dispatch(sortByDirection(sortDirection));
+      this.props.sortBySearchType(searchType);
+      this.props.sortByDirection(sortDirection);
     });
   };
-
+  onTextChange = (e) => {
+    this.props.setTextFilter(e.target.value);
+  };
   render() {
     return (
       <section className="search-block">
@@ -44,9 +46,7 @@ class SearchBlock extends React.Component {
             type="text"
             placeholder="Search for books"
             value={this.props.filters.text}
-            onChange={(e) => {
-              this.props.dispatch(setTextFilter(e.target.value));
-            }}
+            onChange={this.onTextChange}
           />
           <nav className="search__query-dropdown">
             <button
@@ -152,5 +152,10 @@ const mapStateToProps = (state) => {
     filters: state.filters,
   };
 };
+const mapDispatchToProps = (dispatch) => ({
+  setTextFilter: (text) => dispatch(setTextFilter(text)),
+  sortBySearchType: (searchType) => dispatch(sortBySearchType(searchType)),
+  sortByDirection: (sortDirection) => dispatch(sortByDirection(sortDirection)),
+});
 
-export default connect(mapStateToProps)(SearchBlock);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBlock);

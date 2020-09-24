@@ -14,35 +14,44 @@ import { method } from "lodash";
 /* ========== Code ============ */
 //Modal.setAppElement("#app");
 
-export class ModalBox extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      id: props.book ? props.book.id : "",
-      title: props.book ? props.book.title : "",
-      author: props.book ? props.book.author : "",
-      description: props.book ? props.description : "",
-      publicationYear: props.book ? props.book.publicationYear : "",
-      publisher: props.book ? props.book.publisher : "",
-      publicationLength: props.book ? props.book.publicationLength : "",
-      category: props.book ? props.book.category : "",
-      rating: props.book ? props.book.rating : "",
-      src: props.book ? props.book.src : "",
-      isContentInEditMode: false,
-    };
-  }
+const mapDispatchToProps = (dispatch) => ({
+  editBook: (id, book) => dispatch(editBook(id, book)),
+});
 
+export class ModalBox extends React.Component {
+  state = {
+    id: this.props.book ? this.props.book.id : "",
+    title: this.props.book ? this.props.book.title : "",
+    author: this.props.book ? this.props.book.author : "",
+    description: this.props.book ? this.props.description : "",
+    publicationYear: this.props.book ? this.props.book.publicationYear : "",
+    publisher: this.props.book ? this.props.book.publisher : "",
+    publicationLength: this.props.book ? this.props.book.publicationLength : "",
+    category: this.props.book ? this.props.book.category : "",
+    rating: this.props.book ? this.props.book.rating : "",
+    src: this.props.book ? this.props.book.src : "",
+    isContentInEditMode: false,
+  };
+
+  dispatchEditBook = () => {
+    this.setState((book) => {
+      this.props.editBook(this.state.id, book);
+    }),
+      this.toggleEditMode();
+  };
+
+  // dispatchEditBook = () => {
+  //   this.setState((book) => {
+  //     this.props.dispatch(editBook(this.state.id, book));
+  //   }),
+  //     this.toggleEditMode();
+  // };
   toggleEditMode = () => {
     this.setState((prevState) => ({
       isContentInEditMode: !prevState.isContentInEditMode,
     }));
   };
-  dispatchEditBook = () => {
-    this.setState((book) => {
-      this.props.dispatch(editBook(this.state.id, book));
-    }),
-      this.toggleEditMode();
-  };
+
   onTitleChange = (e) => {
     const title = e.target.textContent;
     this.setState(() => ({
@@ -245,7 +254,7 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-export default connect(mapStateToProps)(ModalBox);
+export default connect(mapStateToProps, mapDispatchToProps)(ModalBox);
 
 // /* ========== Code ============ */
 

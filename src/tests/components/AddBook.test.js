@@ -3,11 +3,11 @@ import { shallow } from "enzyme";
 import { AddBook } from "../../components/AddBook";
 import books from "../fixtures/books";
 
-let onSubmit, wrapper;
+let addBook, wrapper;
 
 beforeEach(() => {
-  onSubmit = jest.fn();
-  wrapper = shallow(<AddBook onSubmit={onSubmit} />);
+  addBook = jest.fn();
+  wrapper = shallow(<AddBook addBook={addBook} />);
 });
 
 test("Should render AddBook correctly", () => {
@@ -16,5 +16,5 @@ test("Should render AddBook correctly", () => {
 
 test("Should handle onSubmit", () => {
   wrapper.find("AddBookForm").prop("onSubmit")(books[1]);
-  expect(onSubmit).toHaveBeenLastCalledWith(books[1]);
+  expect(addBook).toHaveBeenLastCalledWith(books[1]);
 });

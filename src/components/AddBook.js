@@ -15,7 +15,7 @@ export class AddBook extends Component {
     addNewBookModal: undefined,
   };
   onSubmit = (book) => {
-    this.props.onSubmit(book);
+    this.props.addBook(book);
   };
   handleAddNewBookModalPopUp = () => {
     this.setState(() => ({
@@ -47,7 +47,7 @@ export class AddBook extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  onSubmit: (book) => dispatch(addBook(book)),
+  addBook: (book) => dispatch(addBook(book)),
 });
 
 export default connect(undefined, mapDispatchToProps)(AddBook);
