@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SearchBlock correctly 1`] = `
+<section
+  className="search-block"
+>
+  <div
+    className="search__query"
+  >
+    <input
+      className="search__query-input"
+      onChange={[Function]}
+      placeholder="Search for books"
+      type="text"
+      value=""
+    />
+    <nav
+      className="search__query-dropdown"
+    >
+      <button
+        className="search-block__btn"
+        data-back="TITLE"
+        data-front="SORT BY:"
+        onClick={[Function]}
+      >
+        <FaCaretDown
+          className="search-block__caret-down"
+        />
+      </button>
+      <ul
+        className="search__query-dropdown--slider "
+      >
+        <li
+          className="search__query-dropdown--item"
+        >
+          <a
+            className="search__query-dropdown--btn active-dropdown--item"
+            href="#"
+            onClick={[Function]}
+          >
+            Title
+          </a>
+        </li>
+        <li
+          className="search__query-dropdown--item"
+        >
+          <a
+            className="search__query-dropdown--btn "
+            href="#"
+            onClick={[Function]}
+          >
+            Author
+          </a>
+        </li>
+        <div
+          className="dropdown-divider"
+        />
+        <li
+          className="search__query-dropdown--item"
+        >
+          <a
+            className="search__query-dropdown--btn active-dropdown--item"
+            href="#"
+            onClick={[Function]}
+          >
+            Ascending
+          </a>
+        </li>
+        <li
+          className="search__query-dropdown--item"
+        >
+          <a
+            className="search__query-dropdown--btn "
+            href="#"
+            onClick={[Function]}
+          >
+            Descending
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>
+`;
+
+exports[`should render SearchBlock with alternative data correctly 1`] = `
+<section
+  className="search-block"
+>
+  <div
+    className="search__query"
+  >
+    <input
+      className="search__query-input"
+      onChange={[Function]}
+      placeholder="Search for books"
+      type="text"
+      value="Robert Sapolski"
+    />
+    <nav
+      className="search__query-dropdown"
+    >
+      <button
+        className="search-block__btn"
+        data-back="TITLE"
+        data-front="SORT BY:"
+        onClick={[Function]}
+      >
+        <FaCaretDown
+          className="search-block__caret-down"
+        />
+      </button>
+      <ul
+        className="search__query-dropdown--slider "
+      >
+        <li
+          className="search__query-dropdown--item"
+        >
+          <a
+            className="search__query-dropdown--btn active-dropdown--item"
+            href="#"
+            onClick={[Function]}
+          >
+            Title
+          </a>
+        </li>
+        <li
+          className="search__query-dropdown--item"
+        >
+          <a
+            className="search__query-dropdown--btn "
+            href="#"
+            onClick={[Function]}
+          >
+            Author
+          </a>
+        </li>
+        <div
+          className="dropdown-divider"
+        />
+        <li
+          className="search__query-dropdown--item"
+        >
+          <a
+            className="search__query-dropdown--btn active-dropdown--item"
+            href="#"
+            onClick={[Function]}
+          >
+            Ascending
+          </a>
+        </li>
+        <li
+          className="search__query-dropdown--item"
+        >
+          <a
+            className="search__query-dropdown--btn "
+            href="#"
+            onClick={[Function]}
+          >
+            Descending
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>
+`;

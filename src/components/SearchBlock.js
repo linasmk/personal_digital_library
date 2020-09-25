@@ -10,7 +10,7 @@ import {
   sortByDirection,
 } from "../store/actionCreators";
 
-class SearchBlock extends React.Component {
+export class SearchBlock extends React.Component {
   state = {
     setActiveState: false,
     sortBy: "title",

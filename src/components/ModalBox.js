@@ -14,10 +14,6 @@ import { method } from "lodash";
 /* ========== Code ============ */
 //Modal.setAppElement("#app");
 
-const mapDispatchToProps = (dispatch) => ({
-  editBook: (id, book) => dispatch(editBook(id, book)),
-});
-
 export class ModalBox extends React.Component {
   state = {
     id: this.props.book ? this.props.book.id : "",
@@ -40,12 +36,6 @@ export class ModalBox extends React.Component {
       this.toggleEditMode();
   };
 
-  // dispatchEditBook = () => {
-  //   this.setState((book) => {
-  //     this.props.dispatch(editBook(this.state.id, book));
-  //   }),
-  //     this.toggleEditMode();
-  // };
   toggleEditMode = () => {
     this.setState((prevState) => ({
       isContentInEditMode: !prevState.isContentInEditMode,
@@ -253,6 +243,9 @@ const mapStateToProps = (state, props) => {
     book: state.books.find((book) => book.id === props.id),
   };
 };
+const mapDispatchToProps = (dispatch) => ({
+  editBook: (id, book) => dispatch(editBook(id, book)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalBox);
 
