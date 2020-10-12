@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders BooksSummary correctly with 1 book 1`] = `
+<section
+  className="header__summary_block"
+>
+  <p
+    className="header__summary_p"
+  >
+    Filtered books:
+     
+    <span
+      className="header__summary_output"
+    >
+      1
+    </span>
+  </p>
+</section>
+`;
+
+exports[`renders booksSummary correctly with several books 1`] = `
+<section
+  className="header__summary_block"
+>
+  <p
+    className="header__summary_p"
+  >
+    Filtered books:
+     
+    <span
+      className="header__summary_output"
+    >
+      5
+    </span>
+  </p>
+</section>
+`;

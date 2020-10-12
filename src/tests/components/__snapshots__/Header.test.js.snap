@@ -3,10 +3,10 @@
 exports[`Should render Header correctly 1`] = `
 <header>
   <h1
-    className="main-heading"
+    className="header__main_heading"
   >
     Personal Digital Library
   </h1>
-  <h2 />
+  <Connect(BooksSummary) />
 </header>
 `;

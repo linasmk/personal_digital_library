@@ -1,6 +1,13 @@
 /* ============= Search Result ============== */
-.search__result {
+.search-result {
   margin: $l-box-size $m-box-size;
+}
+.search-result__no-results {
+  width: 100%;
+  text-align: center;
+  color: $peach;
+  font-size: $m-text-size;
+  animation: element-pop-up 0.5s;
 }
 
 .card__container {
@@ -36,11 +43,14 @@
   padding: $m-box-size;
 }
 
-.card__btn-edit {}
+.card__btn-edit {
+}
 
-.card__btn-trash {}
+.card__btn-trash {
+}
 
-.card__btn-close {}
+.card__btn-close {
+}
 
 /**** Card Main Block ****/
 .card__main-block {
@@ -157,10 +167,13 @@
 }
 
 @media screen and (min-width: pxToRem(768)) {
-  .search__result {
+  .search-result {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  .search-result__no-results {
+    font-size: $l-text-size;
   }
 
   .card__container {
@@ -197,7 +210,7 @@
 }
 
 @media screen and (min-width: pxToRem(998)) {
-  .search__result {
+  .search-result {
     margin: $l-box-size $xxl-box-size;
   }
 

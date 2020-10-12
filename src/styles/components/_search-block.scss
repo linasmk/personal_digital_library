@@ -20,9 +20,10 @@
 }
 
 .search__query-input {
+  width: 55%;
   margin: 0;
   padding: pxToRem(10);
-  width: 60%;
+
   height: pxToRem(40);
   border: 2px solid $peachBrighter;
 
@@ -32,7 +33,7 @@
 }
 
 .search__query-dropdown {
-  width: 40%;
+  width: 45%;
   font-family: $nunito;
   font-size: $xs-text-size;
   position: relative;
@@ -52,13 +53,13 @@
 
 .search-block__caret-down {
   position: absolute;
-  right: pxToRem(5);
+  right: pxToRem(3);
   top: pxToRem(5);
   color: $white;
-  transform: translate(-50%, 35%);
+  transform: translate(-10%, 30%);
   font-size: $m-text-size;
   opacity: 1;
-  transition: all .1s ease-in;
+  transition: all 0.1s ease-in;
 
   &:hover {
     opacity: 0;
@@ -115,17 +116,17 @@
 }
 
 /* ============= Helper Classess ============== */
-.active-accordion {
-  max-height: 100px;
-  overflow: visible;
-  opacity: 1;
-}
-
-.active-dropdown--item {
-  color: $peach;
-}
 
 /* ============= Media Queries ============== */
+@media (min-width: pxToRem(360)) {
+  .search__query-input {
+    width: 65%;
+  }
+
+  .search__query-dropdown {
+    width: 35%;
+  }
+}
 @media (min-width: pxToRem(768)) {
   .search__query {
     width: 75%;

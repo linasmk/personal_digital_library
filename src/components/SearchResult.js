@@ -29,21 +29,10 @@ export const SearchResult = (props) => {
     }
   };
 
-  // const handleStarRating = (rating) => {
-  //   if (this.state.rating === rating) {
-  //     this.setState({ rating: 0 });
-  //   } else {
-  //     this.setState({ rating });
-  //     this.setState(() =>
-  //       this.props.dispatch(editBook(this.state.id, { rating }))
-  //     );
-  //   }
-  // };
-
   return (
-    <div className="search__result">
+    <div className="search-result">
       {props.books.length === 0 ? (
-        <h3>You currently do not have any books!</h3>
+        <h3 className="search-result__no-results">You currently have no books!</h3>
       ) : (
         props.books.map((book) => (
           <div key={book.id} className="card__container">

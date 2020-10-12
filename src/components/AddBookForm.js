@@ -1,7 +1,7 @@
 /* ============ Dependencies ============= */
 import React from "react";
 import Modal from "react-modal";
-
+import { AiOutlineClose} from "react-icons/ai";
 /* ============== Redux =============== */
 
 /* ============ Components ============== */
@@ -121,7 +121,14 @@ class AddBookForm extends React.Component {
         className="modal"
         ariaHideApp={false}
       >
-        <h2 className="add__book_hading">Add New Book</h2>
+      <div className="top-bar h-top-bar-modal">
+        <AiOutlineClose
+            className="card__btn-close h-icon-styles"
+            viewBox="100 50 800 880"
+            onClick={this.props.clearAddNewBookModal}
+          />
+      </div>
+        <h2 className="addbook__heading">Add New Book</h2>
         <form className="addbook__form" onSubmit={this.onSubmit}>
           {this.state.error && (
             <p className="addbook-form__warning">{this.state.error}</p>
@@ -281,12 +288,6 @@ class AddBookForm extends React.Component {
             </button>
           </div>
         </form>
-        <button
-          className="modal__button-top"
-          onClick={this.props.clearAddNewBookModal}
-        >
-          <span>&times;</span>
-        </button>
       </Modal>
     );
   }

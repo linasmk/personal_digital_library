@@ -52,7 +52,7 @@ export class SearchBlock extends React.Component {
             <button
               className="search-block__btn"
               data-back={this.state.sortBy.toUpperCase()}
-              data-front="SORT BY:"
+              data-front="SORT BY"
               onClick={this.toggleAccordion}
             >
               <FaCaretDown className="search-block__caret-down" />
