@@ -6,7 +6,7 @@ import filtersReducer from "./filtersReducer";
 /* =================================================
 =========== STORE CONFIGURATION ================
 ================================================= */
-localStorage.clear();
+//localStorage.clear();
 function saveToLocalStorage(state) {
   try {
     const serializedState = JSON.stringify(state);
