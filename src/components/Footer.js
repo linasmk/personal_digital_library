@@ -1,9 +1,6 @@
 import React from "react";
 const Footer = props => {
   const currentYear = new Date().getFullYear();
-  
-      
-  
   return (
     <footer className="footer">
       <div className="footer__overlay">

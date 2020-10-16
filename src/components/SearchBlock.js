@@ -1,6 +1,7 @@
 /* ========== Dependencies ============ */
 import React from "react";
 import { FaCaretDown } from "react-icons/fa";
+import {AiFillCaretDown, AiFillCaretUp} from "react-icons/ai";
 
 /* ========== Redux ============= */
 import { connect } from "react-redux";
@@ -44,18 +45,17 @@ export class SearchBlock extends React.Component {
           <input
             className="search__query-input"
             type="text"
-            placeholder="Search for books"
+            placeholder={`Search by ${this.state.sortBy}`}
             value={this.props.filters.text}
             onChange={this.onTextChange}
           />
           <nav className="search__query-dropdown">
             <button
               className="search-block__btn"
-              data-back={this.state.sortBy.toUpperCase()}
-              data-front="SORT BY"
               onClick={this.toggleAccordion}
-            >
-              <FaCaretDown className="search-block__caret-down" />
+            >SORT BY:
+           {this.state.setActiveState ? <AiFillCaretUp className="search-block__caret-down" /> : <AiFillCaretDown className="search-block__caret-down" />}
+              
             </button>
             <ul
               className={

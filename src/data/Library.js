@@ -171,17 +171,117 @@ const library = [
       "https://www.amazon.de/Incognito-INCOGNITO-Eagleman-May-31-2011-Hardcover/dp/B007NBBIJQ/ref=sr_1_2?crid=191HTBVOWYAAX&dchild=1&keywords=incognito+the+secret+lives+of+the+brain&qid=1595686037&sprefix=incognito%2Caps%2C212&sr=8-2",
     rating: 8,
     src:
-      "https://images-na.ssl-images-amazon.com/images/I/41TprMMlnrL._SX327_BO1,204,203,200_.jpg",
+      "https://images-na.ssl-images-amazon.com/images/I/41LyhPGxl9L._SX322_BO1,204,203,200_.jpg",
     srcSm:
-      "https://images-na.ssl-images-amazon.com/images/I/41TprMMlnrL._SX327_BO1,204,203,200_.jpg",
+      "https://images-na.ssl-images-amazon.com/images/I/41LyhPGxl9L._SX322_BO1,204,203,200_.jpg",
     srcMd:
-      "https://images-na.ssl-images-amazon.com/images/I/41TprMMlnrL._SX327_BO1,204,203,200_.jpg",
+      "https://images-na.ssl-images-amazon.com/images/I/41LyhPGxl9L._SX322_BO1,204,203,200_.jpg",
     srcLg:
-      "https://images-na.ssl-images-amazon.com/images/I/41TprMMlnrL._SX327_BO1,204,203,200_.jpg",
+      "https://images-na.ssl-images-amazon.com/images/I/41FyR7nHNwL._SX330_BO1,204,203,200_.jpg",
     srcXlg:
-      "https://images-na.ssl-images-amazon.com/images/I/41TprMMlnrL._SX327_BO1,204,203,200_.jpg",
+      "https://images-na.ssl-images-amazon.com/images/I/41LyhPGxl9L._SX322_BO1,204,203,200_.jpg",
     imgLink:
-      "https://images-na.ssl-images-amazon.com/images/I/41TprMMlnrL._SX327_BO1,204,203,200_.jpg",
+      "https://images-na.ssl-images-amazon.com/images/I/41LyhPGxl9L._SX322_BO1,204,203,200_.jpg",
   },
+  {
+    id: "655249",
+    title: "The Age of Agile: How Smart Companies Are Transforming the Way Work Gets Done",
+    author: "Stephen Denning",
+    description: "An unstoppable business revolution is under way--and it is Agile. Sparking dramatic improvements in quality, innovation, and speed-to-market, the Agile movement has helped companies both large and small learn to connect everyone and everything . . . all the time.With rapidly evolving consumer needs and technology that is that is being updated quicker than ever before, businesses are recognizing how vitally essential it is adapt. And adapt quickly. The Agile movement enables a team, unit, or enterprise to nimbly acclimate and upgrade products and services to meet these constantly changing needs.Filled with examples from every sector, The Age of Agile helps readers:• Master the three laws of Agile Management (team, customer, network)• Embrace the new mindset• Overcome constraints• Employ meaningful metrics• Make the entire organization Agile• And more!Companies don’t need to be born Agile. With the groundbreaking formulas laid out in this book, even global giants can learn to act entrepreneurially. Your company’s future may depend on it!",
+    publicationYear: "2018",
+    publisher: "AMACOM",
+    publicationLength: 336,
+    category: "Business Project Management",
+    url:
+      "https://www.amazon.com/Age-Agile-Smart-Companies-Transforming/dp/0814439098/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=&sr=",
+    rating: 10,
+    src:
+      "https://images-na.ssl-images-amazon.com/images/I/41FyR7nHNwL._SX330_BO1,204,203,200_.jpg",
+    srcSm:
+      "https://images-na.ssl-images-amazon.com/images/I/41FyR7nHNwL._SX330_BO1,204,203,200_.jpg",
+    srcMd:
+      "https://images-na.ssl-images-amazon.com/images/I/41FyR7nHNwL._SX330_BO1,204,203,200_.jpg",
+    srcLg:
+      "https://images-na.ssl-images-amazon.com/images/I/41FyR7nHNwL._SX330_BO1,204,203,200_.jpg",
+    srcXlg:
+      "https://images-na.ssl-images-amazon.com/images/I/41FyR7nHNwL._SX330_BO1,204,203,200_.jpg",
+    imgLink:
+      "https://images-na.ssl-images-amazon.com/images/I/41FyR7nHNwL._SX330_BO1,204,203,200_.jpg",
+  },
+  {
+    id: "321249",
+    title: "Cool: How the Brain’s Hidden Quest for Cool Drives Our Economy and Shapes Our World",
+    author: "Steven Quartz & Anette Asp",
+    description: "We live in a world of conspicuous consumption, where the clothes we wear, the cars we drive, and the food we eat lead double lives: they don't merely satisfy our needs; they also communicate our values, identities, and aspirations. In Beverly Hills, tourists flock to the famous Rodeo Drive-not to shop, but simply to take photographs of themselves in front of luxury stores. And for one week in August, hundreds of thousands of HarleyDavidson fans from all over the world descend on the remote town of Sturgis, South Dakota, and engulf the otherwise sleepy hamlet in the deafening roar of motorcycle engines. Why do brands inspire such devotion?",
+    publicationYear: "2015",
+    publisher: "Farrar, Straus and Giroux",
+    publicationLength: 304,
+    category: "Marketing & Consumer Behavior",
+    url:
+      "https://www.amazon.com/Cool-Brains-Hidden-Drives-Economy-dp-0374129185/dp/0374129185/ref=mt_other?_encoding=UTF8&me=&qid=",
+    rating: 9,
+    src:
+      "https://images-na.ssl-images-amazon.com/images/I/51mqrxPPjoL._SX329_BO1,204,203,200_.jpg",
+    srcSm:
+      "https://images-na.ssl-images-amazon.com/images/I/51mqrxPPjoL._SX329_BO1,204,203,200_.jpg",
+    srcMd:
+      "https://images-na.ssl-images-amazon.com/images/I/51mqrxPPjoL._SX329_BO1,204,203,200_.jpg",
+    srcLg:
+      "https://images-na.ssl-images-amazon.com/images/I/51mqrxPPjoL._SX329_BO1,204,203,200_.jpg",
+    srcXlg:
+      "https://images-na.ssl-images-amazon.com/images/I/51mqrxPPjoL._SX329_BO1,204,203,200_.jpg",
+    imgLink:
+      "https://images-na.ssl-images-amazon.com/images/I/51mqrxPPjoL._SX329_BO1,204,203,200_.jpg",
+  },
+  {
+    id: "322249",
+    title: "Thinking, Fast and Slow",
+    author: "Daniel Kahneman",
+    description: "In the international bestseller, Thinking, Fast and Slow, Daniel Kahneman, the renowned psychologist and winner of the Nobel Prize in Economics, takes us on a groundbreaking tour of the mind and explains the two systems that drive the way we think. System 1 is fast, intuitive, and emotional; System 2 is slower, more deliberative, and more logical. The impact of overconfidence on corporate strategies, the difficulties of predicting what will make us happy in the future, the profound effect of cognitive biases on everything from playing the stock market to planning our next vacation―each of these can be understood only by knowing how the two systems shape our judgments and decisions.",
+    publicationYear: "2011",
+    publisher: "Farrar, Straus and Giroux",
+    publicationLength: 512,
+    category: "Medical Cognitive Psychology",
+    url:
+      "https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374275637/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1602839232&sr=1-1",
+    rating: 9,
+    src:
+      "https://images-na.ssl-images-amazon.com/images/I/415i-TwUaNL._SX343_BO1,204,203,200_.jpg",
+    srcSm:
+      "https://images-na.ssl-images-amazon.com/images/I/51mqrxPPjoL._SX329_BO1,204,203,200_.jpg",
+    srcMd:
+      "https://images-na.ssl-images-amazon.com/images/I/415i-TwUaNL._SX343_BO1,204,203,200_.jpg",
+    srcLg:
+      "https://images-na.ssl-images-amazon.com/images/I/415i-TwUaNL._SX343_BO1,204,203,200_.jpg",
+    srcXlg:
+      "https://images-na.ssl-images-amazon.com/images/I/415i-TwUaNL._SX343_BO1,204,203,200_.jpg",
+    imgLink:
+      "https://images-na.ssl-images-amazon.com/images/I/415i-TwUaNL._SX343_BO1,204,203,200_.jpg",
+  },
+  {
+    id: "322559",
+    title: "Here Comes Everybody: The Power of Organizing Without Organizations",
+    author: "Clay Shirky",
+    description: "For the first time in history, the tools for cooperating on a global scale are not solely in the hands of governments or institutions. The spread of the internet and mobile phones are changing how people come together and get things done—and sparking a revolution that, as Clay Shirky shows, is changing what we do, how we do it, and even who we are. Here, we encounter a woman who loses her phone and recruits an army of volunteers to get it back from the person who stole it. A dissatisfied airline passenger who spawns a national movement by taking her case to the web. And a handful of kids in Belarus who create a political protest that the state is powerless to stop. Here Comes Everybody is a revelatory examination of how the wildfirelike spread of new forms of social interaction enabled by technology is changing the way humans form groups and exist within them. A revolution in social organization has commenced, and Clay Shirky is its brilliant chronicler.",
+    publicationYear: "2008",
+    publisher: "Penguin Press",
+    publicationLength: 336,
+    category: " Technology",
+    url:
+      "https://www.amazon.com/Here-Comes-Everybody-Organizing-Organizations-dp-1594201536/dp/1594201536/ref=mt_other?_encoding=UTF8&me=&qid=1602839534",
+    rating: 9,
+    src:
+      "https://images-na.ssl-images-amazon.com/images/I/51nYlS1ZJnL._SX330_BO1,204,203,200_.jpg",
+    srcSm:
+      "https://images-na.ssl-images-amazon.com/images/I/51nYlS1ZJnL._SX330_BO1,204,203,200_.jpg",
+    srcMd:
+      "https://images-na.ssl-images-amazon.com/images/I/51nYlS1ZJnL._SX330_BO1,204,203,200_.jpg",
+    srcLg:
+      "https://images-na.ssl-images-amazon.com/images/I/51nYlS1ZJnL._SX330_BO1,204,203,200_.jpg",
+    srcXlg:
+      "https://images-na.ssl-images-amazon.com/images/I/51nYlS1ZJnL._SX330_BO1,204,203,200_.jpg",
+    imgLink:
+      "https://images-na.ssl-images-amazon.com/images/I/51nYlS1ZJnL._SX330_BO1,204,203,200_.jpg",
+  }
 ];
 export default library;
